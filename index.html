@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumidari · AI agency for local businesses</title>
+<meta name="description" content="Lumidari builds websites, WhatsApp booking assistants, AI videos and dashboards for local businesses in Visakhapatnam and across India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');window.addEventListener('error',function(){var i=document.getElementById('intro'),m=document.getElementById('main');if(i)i.hidden=true;if(m)m.inert=false;});</script>
+<style>
+/* VOICE confident, plain, warm: a local studio that shows its real work
+   IDEA a folded pamphlet that opens onto a sunlit street; a path of light leads to each shop's door
+   PICTURE the street scene in the hero, then real client screens inside device frames, then live WhatsApp phones
+   COLOUR light blue grounds, navy ink and bands, one clear blue for action; client work keeps its own green
+   TYPE Sora display + Inter text (+ Noto Sans Telugu)
+   LAYOUT pain points, real case study with video and tabs, try-it phones, concept, studio, services, contact */
+:root{color-scheme:light;--bg:#E8F3FF;--bg2:#DCEDFF;--card:#F7FBFF;--ink:#0B2545;--muted:#3C5A7E;--blue:#1E6FD9;--blued:#155BBE;--line:#BCD9F7;--soft:#CFE6FF;--navy2:#071A33;--sky:#BFDDFB;--wa:#0B6B5E;--green:#0F5C5A}
+*{box-sizing:border-box;min-width:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:clip}
+h1,h2,h3,h4{font-family:Sora,Inter,system-ui,sans-serif;letter-spacing:-.02em;line-height:1.08;margin:0;text-wrap:balance}
+h2{font-size:clamp(30px,4vw,48px)}
+h3{font-size:20px;line-height:1.25}
+p{margin:0}
+a{color:inherit}
+img,svg,video{max-width:100%}
+img,video{display:block}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding-block:clamp(56px,7vw,104px);padding-left:max(5vw,16px,env(safe-area-inset-left,0px));padding-right:max(5vw,16px,env(safe-area-inset-right,0px))}
+.tint{background:var(--bg2)}
+.dark{background:radial-gradient(110% 80% at 80% 0%,#16406F 0%,var(--ink) 55%,var(--navy2) 100%);color:#fff}
+.dark .lead,.dark .muted{color:var(--sky)}
+.lead{font-size:17px;max-width:62ch;color:var(--muted)}
+.muted{color:var(--muted)}
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 48px;align-items:end;margin-bottom:clamp(28px,4vw,52px)}
+.kick{display:inline-flex;align-items:center;gap:8px;font:600 14px/1 Sora,sans-serif;color:var(--blue);margin-bottom:14px}
+.dark .kick{color:#8EC2FA}
+.kick i{width:8px;height:8px;border-radius:50%;background:currentColor}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;font:600 16px/1 Inter,system-ui,sans-serif;text-decoration:none;border:1.5px solid transparent;transition:transform .25s,background .25s,border-color .25s;white-space:nowrap;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.btn.primary{background:var(--blue);color:#fff;box-shadow:0 10px 22px -12px rgba(30,111,217,.8)}
+.btn.primary:hover{background:var(--blued)}
+.btn.outline{border-color:var(--blue);color:var(--ink);background:transparent}
+.btn.outline:hover{background:var(--soft)}
+.dark .btn.outline{border-color:#8EC2FA;color:#fff}
+.dark .btn.outline:hover{background:rgba(255,255,255,.08)}
+.btn.sm{min-height:44px;padding:0 18px;font-size:15px}
+.btn svg{width:20px;height:20px;flex:none}
+.ico{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.hl{stroke:#1E6FD9}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border-radius:999px;font:600 13px/1.2 Inter,sans-serif;background:#fff;border:1px solid var(--line);color:var(--ink)}
+.pill .live{width:8px;height:8px;border-radius:50%;background:#1FA463;box-shadow:0 0 0 0 rgba(31,164,99,.6);animation:live 1.8s infinite}
+.pill.amber{background:#FFF4DB;border-color:#F3D48B;color:#6B4A00}
+.pill.concept{background:#F1E9FF;border-color:#D6C4FA;color:#4B2A8C}
+.dark .pill{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:#fff}
+/* intro */
+.intro{display:none}
+.js .intro{display:grid;position:fixed;inset:0;z-index:60;background:radial-gradient(120% 85% at 50% 38%,#F6FAFF 0%,#DCEDFF 55%,#C3DEFB 100%);place-items:center;overflow:hidden;padding:24px}
+.stage{display:grid;place-items:center;width:100%}.stage>*{grid-area:1/1}
+.openbtn{background:none;border:0;padding:0;color:inherit;font:inherit;cursor:pointer;display:grid;justify-items:center;gap:18px}
+.book{display:block;position:relative;width:min(70vw,280px);aspect-ratio:3/4;perspective:1400px;animation:float 4s ease-in-out infinite}
+.inside,.front{position:absolute;inset:0;border-radius:16px}
+.inside{background:radial-gradient(circle at 50% 42%,#BFDDFB 0%,#5E9BE6 55%,#1E6FD9 100%);display:grid;place-items:center;color:#fff}
+.inside svg{width:38%}
+.front{background:linear-gradient(90deg,transparent 33.1%,rgba(30,111,217,.1) 33.3%,transparent 33.6%,transparent 66.4%,rgba(30,111,217,.1) 66.6%,transparent 66.9%),linear-gradient(160deg,#fff,#E3F0FF);border:1px solid #A9CDF5;transform-origin:left center;backface-visibility:hidden;display:grid;align-content:center;justify-items:center;gap:12px;padding:26px 20px;text-align:center;overflow:hidden;box-shadow:0 26px 44px -26px rgba(11,37,69,.45)}
+.front::after{content:"";position:absolute;inset:-20% auto -20% 0;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.85),transparent);transform:translateX(-160%) skewX(-12deg);animation:shine 3.6s ease-in-out infinite}
+.front .mk{width:66px;color:var(--blue)}
+.fname{font:600 32px/1 Sora,sans-serif;letter-spacing:-.02em}
+.fline{font:500 15px/1.35 Sora,sans-serif;color:var(--blue);max-width:20ch}
+.fcity{font-size:13px;color:var(--muted)}
+.tap{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 20px;border-radius:999px;background:var(--blue);color:#fff;font-weight:600;font-size:15px}
+.tap i{width:9px;height:9px;border-radius:50%;background:#fff;animation:ping 1.6s infinite}
+.title{display:grid;justify-items:center;gap:18px;visibility:hidden;text-align:center;pointer-events:none}
+.word{font:600 clamp(58px,14vw,156px)/1 Sora,sans-serif;letter-spacing:-.025em;display:flex;white-space:nowrap}
+.word .ch{display:inline-block}
+.tagline{font:500 clamp(18px,2.6vw,26px)/1.3 Sora,sans-serif;color:var(--blue);display:flex;flex-wrap:wrap;justify-content:center;gap:4px 10px}
+.tagline span{display:inline-block;opacity:0}
+.hint{position:absolute;bottom:max(22px,env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;font-size:13px;color:var(--muted);opacity:0;transition:opacity .4s}
+.hint.on{opacity:1}
+/* header, hero */
+.top{position:sticky;top:0;z-index:20;background:rgba(232,243,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px max(5vw,16px)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:600 22px/1 Sora,sans-serif;letter-spacing:-.02em;margin-right:auto}
+.brand svg{width:30px;color:var(--blue)}
+.nav{display:flex;gap:2px}
+.nav a{flex:none;padding:12px 11px;text-decoration:none;color:var(--muted);font-weight:500;font-size:15px;border-radius:8px;white-space:nowrap}
+.nav a:hover{color:var(--ink);background:var(--soft)}
+.replay{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:transparent;color:var(--ink);border:1px solid var(--line);cursor:pointer}
+.replay svg{width:18px;height:18px}
+.hero{padding-top:clamp(32px,5vw,64px)}
+.herogrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px 56px;align-items:end;padding-inline:max(5vw,16px)}
+.hero h1{font-size:clamp(38px,5.2vw,64px);line-height:1.06;margin-top:18px}
+.hero h1 .w{display:inline-block}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.herocopy{display:grid;gap:22px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.scene{position:relative;height:clamp(240px,38vw,400px);margin-top:clamp(28px,4vw,48px);background:#C9E1FA}
+.scene>svg{position:absolute;inset:0;width:100%;height:100%}
+.win{fill:#5D8ED0;animation:lit 7s infinite}
+.flow{stroke-dasharray:10 16;animation:flow 1.4s linear infinite}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2.2s ease-out infinite}
+.cloud{animation:drift linear infinite}
+.marq{overflow:hidden;background:var(--blue);color:#fff;padding:14px 0}
+.mtrack{display:flex;width:max-content;animation:marq 40s linear infinite}
+.mtrack span{display:inline-flex;align-items:center;gap:14px;padding-right:14px;font:500 16px/1 Sora,sans-serif;white-space:nowrap}
+.mtrack span::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--sky)}
+/* problems */
+.seg{display:inline-flex;padding:5px;border-radius:999px;background:#fff;border:1px solid var(--line);gap:4px}
+.seg button{min-height:44px;padding:0 18px;border-radius:999px;border:0;background:transparent;font:600 15px/1 Inter,sans-serif;color:var(--muted);cursor:pointer;transition:background .3s,color .3s}
+.seg button[aria-pressed=true]{background:var(--ink);color:#fff}
+.probs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.prob{display:block;width:100%;perspective:1200px;min-height:300px;border:0;padding:0;background:none;text-align:left;font:inherit;color:inherit;cursor:pointer}
+.pin{display:block;position:relative;height:100%;min-height:300px;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.prob.on .pin{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.face.a{background:#fff;border:1px solid var(--line)}
+.face.b{background:var(--ink);color:#fff;transform:rotateY(180deg)}
+.face .q{font:600 21px/1.3 Sora,sans-serif;letter-spacing:-.01em}
+.face .ico{width:52px;height:52px;padding:12px;border-radius:16px;stroke-width:1.7}
+.face.a .ico{background:var(--bg2);color:var(--ink)}
+.face.b .ico{background:rgba(255,255,255,.1);color:#fff}
+.face.b .ico .hl{stroke:#8EC2FA}
+.face .tag{font-size:13px;font-weight:600;color:var(--blue)}
+.face.b .tag{color:#8EC2FA}
+.face.b p{color:#D6E8FC;font-size:15px}
+.face .proof{margin-top:auto;display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.1);color:#fff}
+.face .proof i{width:7px;height:7px;border-radius:50%;background:#3DDC84}
+.face .flipme{margin-top:auto;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.face .flipme .ico{width:16px;height:16px;padding:0;border-radius:0;background:none;color:var(--blue)}
+/* case study */
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:0 0 clamp(28px,4vw,44px)}
+.fact{border-top:2px solid #8EC2FA;padding-top:14px}
+.fact b{display:block;font:600 clamp(34px,4vw,50px)/1 Sora,sans-serif;letter-spacing:-.03em}
+.fact span{display:block;margin-top:8px;font-size:15px;color:var(--sky)}
+.player{position:relative;border-radius:22px;overflow:hidden;background:#06162B;box-shadow:0 40px 70px -40px rgba(0,0,0,.8);aspect-ratio:16/9}
+.player video{width:100%;height:100%;object-fit:cover}
+.playbtn{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(180deg,rgba(6,22,43,0) 40%,rgba(6,22,43,.55));border:0;cursor:pointer;color:#fff}
+.playbtn span{display:inline-flex;align-items:center;gap:12px;padding:14px 22px 14px 16px;border-radius:999px;background:#fff;color:var(--ink);font:600 17px/1 Sora,sans-serif;box-shadow:0 14px 30px -12px rgba(0,0,0,.6)}
+.playbtn svg{width:34px;height:34px}
+.vcap{margin-top:14px;font-size:14px;color:var(--sky)}
+.tour{display:grid;grid-template-columns:260px minmax(0,1fr);gap:28px;margin-top:clamp(40px,6vw,72px)}
+.tabs{display:grid;gap:8px;align-content:start}
+.tabs button{display:flex;align-items:center;gap:12px;min-height:56px;padding:10px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:#D6E8FC;font:600 16px/1.2 Sora,sans-serif;text-align:left;cursor:pointer;transition:background .25s,border-color .25s,color .25s}
+.tabs button .ico{width:24px;height:24px;color:#8EC2FA}
+.tabs button[aria-selected=true]{background:#fff;color:var(--ink);border-color:#fff}
+.tabs button[aria-selected=true] .ico{color:var(--blue)}
+.panel{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px;align-items:center;animation:pin .6s cubic-bezier(.2,.8,.2,1)}
+.panel h3{font-size:26px}
+.panel ul{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:10px;color:#D6E8FC}
+.panel li{display:flex;gap:10px}
+.panel li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:#8EC2FA;margin-top:.6em}
+.shots{position:relative;min-height:360px;display:grid;place-items:center}
+.laptop{position:relative;width:100%;max-width:640px;border-radius:14px;background:#06162B;padding:10px;box-shadow:0 30px 50px -30px rgba(0,0,0,.8)}
+.laptop .scr{position:relative;aspect-ratio:16/10;border-radius:6px;overflow:hidden;background:#fff}
+.laptop .scr>*{width:100%;height:100%;object-fit:cover;object-position:top}
+.laptop::after{content:"";position:absolute;left:-4%;right:-4%;bottom:-16px;height:14px;border-radius:0 0 14px 14px;background:linear-gradient(#C9D8EA,#8DA8C8)}
+.phone{position:relative;width:200px;border-radius:30px;background:#06162B;padding:8px;box-shadow:0 30px 50px -24px rgba(0,0,0,.85)}
+.phone .scr{position:relative;aspect-ratio:600/1298;border-radius:23px;overflow:hidden;background:#fff}
+.phone .scr>*{width:100%;height:100%;object-fit:cover;object-position:top}
+.shots .phone.over{position:absolute;right:-6px;bottom:-24px;width:150px}
+.zoom{border:0;padding:0;background:none;cursor:zoom-in;display:block;width:100%}
+.thumbs{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.thumbs button{width:120px;height:80px;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.25);padding:0;cursor:zoom-in;background:#fff}
+.thumbs img{width:100%;height:100%;object-fit:cover;object-position:top}
+.tv{width:100%;max-width:640px;border-radius:12px;border:10px solid #06162B;box-shadow:0 30px 50px -30px rgba(0,0,0,.8)}
+.banner{width:min(100%,340px);border-radius:10px;box-shadow:0 30px 50px -26px rgba(0,0,0,.8);transform:rotate(-2deg)}
+.note{margin-top:22px;font-size:13px;color:var(--sky)}
+.safe{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:clamp(36px,5vw,56px)}
+.safe div{border-radius:16px;padding:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);display:grid;gap:10px;align-content:start;font-size:15px;color:#D6E8FC}
+.safe .ico{color:#8EC2FA}
+/* demo phones */
+.demo{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:28px;align-items:start}
+.dphone{width:340px;border-radius:40px;background:var(--ink);padding:10px;box-shadow:0 40px 60px -30px rgba(11,37,69,.6)}
+.dphone .scr{height:640px;border-radius:31px;overflow:hidden;background:#EFE7DD;display:flex;flex-direction:column}
+.plab{text-align:center;margin-top:14px;font:600 15px/1.3 Sora,sans-serif}
+.plab small{display:block;font:500 13px Inter,sans-serif;color:var(--muted);margin-top:3px}
+.laptop .scr .zoom img{width:100%;height:100%;object-fit:cover;object-position:top}
+.wah{display:flex;align-items:center;gap:10px;padding:16px 14px 12px;background:var(--wa);color:#fff}
+.wah b{display:block;font:600 15px/1.2 Inter,sans-serif}.wah small{font-size:12px;opacity:.85}
+.av{width:36px;height:36px;border-radius:50%;background:#fff;color:var(--wa);display:grid;place-items:center;font:700 15px Sora,sans-serif;flex:none}
+.chat{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:8px;padding:12px 10px;scroll-behavior:smooth}
+.m{max-width:88%;padding:8px 10px 6px;border-radius:10px;font-size:14px;line-height:1.4;color:#111B21;box-shadow:0 1px 1px rgba(0,0,0,.1);white-space:pre-line;animation:pop .35s cubic-bezier(.2,.8,.2,1)}
+.m.me{align-self:flex-end;background:#D9FDD3;border-top-right-radius:3px}
+.m.bot{align-self:flex-start;background:#fff;border-top-left-radius:3px}
+.m .t{display:block;text-align:right;font-size:11px;color:#667781;margin-top:2px}
+.m .foot{display:block;font-size:12px;color:#667781;margin-top:6px}
+.opts{display:grid;gap:0;margin:8px -10px -6px;border-top:1px solid #E9EDEF}
+.opts button{min-height:44px;border:0;border-bottom:1px solid #E9EDEF;background:transparent;font:600 14px/1.2 Inter,sans-serif;color:var(--wa);cursor:pointer;padding:8px 10px}
+.opts button:last-child{border-bottom:0}
+.opts button:disabled{color:#9AA7AE;cursor:default}
+.opts button.go{background:#E7F7EF;animation:nudge 1.6s ease-in-out infinite}
+.opts .row{display:flex;justify-content:space-between;gap:10px;text-align:left}
+.opts .row small{font-weight:500;color:#667781}
+.typing{align-self:flex-start;background:#fff;border-radius:10px;padding:10px 12px;display:flex;gap:4px}
+.typing i{width:7px;height:7px;border-radius:50%;background:#9AA7AE;animation:dots 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+.bar{display:flex;gap:8px;align-items:center;padding:8px 10px;background:#F0F2F5}
+.bar .in{flex:1;min-height:44px;border-radius:22px;background:#fff;display:flex;align-items:center;padding:0 14px;font-size:14px;color:#667781}
+.bar button{min-height:44px;border-radius:22px;border:0;background:var(--wa);color:#fff;font:600 14px Inter,sans-serif;padding:0 14px;cursor:pointer}
+.bar button.go{animation:nudge 1.6s ease-in-out infinite}
+.dside{display:grid;gap:18px}
+.steps3{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:14px;counter-reset:s}
+.steps3 li{display:flex;gap:14px;counter-increment:s}
+.steps3 li::before{content:counter(s);flex:none;width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;font:600 14px/30px Sora,sans-serif;text-align:center}
+.steps3 b{display:block;font:600 16px/1.3 Sora,sans-serif}
+.steps3 span{color:var(--muted);font-size:15px}
+/* optical concept */
+.opt{display:grid;grid-template-columns:minmax(0,1.2fr) auto;gap:32px;align-items:center}
+.tab{background:#fff;border-radius:24px;border:10px solid var(--ink);padding:20px;box-shadow:0 40px 60px -34px rgba(11,37,69,.55)}
+.tabh{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.tabh b{font:600 17px/1.2 Sora,sans-serif}
+.rx{width:100%;border-collapse:collapse;margin-top:14px;font-size:15px}
+.rx th,.rx td{border:1px solid var(--line);padding:9px 8px;text-align:center}
+.rx th{background:var(--bg);font-weight:600;font-size:13px}
+.rx td.e{font-weight:600;text-align:left;background:var(--bg)}
+.rxmeta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px;font-size:14px}
+.rxmeta div{background:var(--bg);border-radius:10px;padding:8px 10px}
+.rxmeta small{display:block;color:var(--muted);font-size:12px}
+.rx input,.rxmeta input,.rxmeta select,.cust input{width:100%;min-height:44px;border:1px solid var(--line);border-radius:10px;background:#fff;font:600 16px/1 Inter,sans-serif;color:var(--ink);text-align:center;padding:0 6px}
+.rx td{padding:5px}
+.rxmeta label{display:block;background:var(--bg);border-radius:10px;padding:8px 10px}
+.rxmeta input,.rxmeta select{margin-top:4px;text-align:left;padding:0 10px}
+.cust{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+.cust input{width:150px;text-align:left;padding:0 10px}
+.rxbtns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.rxbtns .primary{flex:1 1 260px}
+.rxerr{min-height:20px;margin-top:8px;font-size:14px;font-weight:600;color:#B42318}
+.m.sys{align-self:center;background:#FFF5C4;font-size:12.5px;box-shadow:none;animation:none;text-align:center}
+.m .when{color:#667781;font-size:12.5px}
+.rxcard{background:#fff;border:1px solid #D9E3EA;border-radius:8px;padding:8px;margin-top:6px;font-size:12.5px}
+.rxcard table{width:100%;border-collapse:collapse;margin-top:4px}
+.rxcard th,.rxcard td{border:1px solid #E3E8EC;padding:3px;text-align:center}
+.flyer{position:fixed;z-index:70;width:60px;height:44px;border-radius:8px;background:#fff;border:2px solid var(--blue);display:grid;place-items:center;pointer-events:none}
+/* studio */
+.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
+.tile{border-radius:22px;overflow:hidden;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column}
+.tile .media{position:relative;background:var(--ink)}
+.tile .media video,.tile .media img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.tile .body{padding:18px 20px 20px;display:grid;gap:6px}
+.tile h3{font-size:19px}
+.tile p{color:var(--muted);font-size:15px}
+.tile a.more{font-weight:600;color:var(--blue);text-decoration:none;font-size:15px}
+.t3{grid-column:span 3}.t2{grid-column:span 2}
+.tile .tag2{position:absolute;left:12px;top:12px;font:600 12px/1 Inter,sans-serif;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.92);color:var(--ink)}
+/* services, steps, promise */
+.stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.stage-col{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;display:grid;gap:14px;align-content:start}
+.sh{display:flex;align-items:center;gap:14px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.sh h3{font-size:24px}
+.sh p{font-size:14px;color:var(--muted)}
+.lamp{width:16px;height:16px;border-radius:50%;background:var(--blue);flex:none}
+.l1{opacity:.4}.l2{box-shadow:0 0 0 5px rgba(30,111,217,.18)}.l3{box-shadow:0 0 0 5px rgba(30,111,217,.2),0 0 0 11px rgba(30,111,217,.1)}
+.svc{border-radius:14px;padding:14px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 14px;transition:background .3s,transform .3s}
+.svc:hover{background:#fff;transform:translateY(-3px)}
+.svc .ico{grid-row:span 3;margin-top:2px}
+.svc h4{font:600 17px/1.3 Sora,sans-serif;letter-spacing:-.01em}
+.svc p{color:var(--muted);font-size:15px}
+.svc a{font-size:14px;font-weight:600;color:var(--blue);text-decoration:none}
+.steps{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;list-style:none;margin:0;padding:0}
+.track{position:absolute;left:12px;right:12px;top:11px;height:2px;background:var(--line)}
+.track i{position:absolute;inset:0;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform 1.8s cubic-bezier(.3,.7,.2,1) .2s}
+.steps.in .track i{transform:scaleX(1)}
+.step{position:relative;display:grid;gap:10px;padding-top:40px}
+.step .dot{position:absolute;top:0;left:0;width:24px;height:24px;border-radius:50%;background:var(--bg2);border:2px solid var(--line);transition:background .4s,border-color .4s,box-shadow .4s}
+.steps.in .dot{background:var(--blue);border-color:var(--blue);box-shadow:0 0 0 6px rgba(30,111,217,.15)}
+.step p{color:var(--muted);font-size:15px}
+.promise{margin-top:clamp(32px,5vw,52px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.promise div{border-top:2px solid var(--blue);padding-top:16px;display:grid;gap:8px;align-content:start}
+.promise .ico{color:var(--blue);width:28px;height:28px}
+.promise p{color:var(--muted);font-size:15px}
+/* motto, contact */
+.mgrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:28px 56px;align-items:center}
+.mq .qm{display:block;font:700 100px/1 Sora,Georgia,serif;color:#5E9BE6;height:52px;overflow:hidden}
+.mq p{font:600 clamp(38px,5.4vw,68px)/1.04 Sora,sans-serif;letter-spacing:-.025em;text-wrap:balance}
+.mq b{font-weight:inherit;background:linear-gradient(100deg,#fff 0 40%,#8EC2FA 50%,#fff 60% 100%);background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shim 6s ease-in-out infinite}
+.doorfig{position:relative;height:clamp(240px,30vw,340px)}
+.doorfig svg{position:absolute;inset:0;width:100%;height:100%}
+.tw{animation:tw 3.2s ease-in-out infinite}
+.contact{background:var(--soft)}
+.cgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px 56px;align-items:center}
+.card{background:#fff;border-radius:22px;padding:clamp(22px,3vw,32px);display:grid;gap:16px;border:1px solid var(--line);box-shadow:0 18px 40px -30px rgba(11,37,69,.55)}
+.who-name{font:600 22px/1.2 Sora,sans-serif}
+.role{color:var(--muted);font-size:15px}
+.lines{display:grid;gap:10px}
+.lines div{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
+.lines .ico{width:22px;height:22px;color:var(--blue)}
+.lines a{text-decoration:none;font-weight:600;overflow-wrap:anywhere}
+.cbtns{display:flex;flex-wrap:wrap;gap:10px}
+.status{min-height:22px;font-size:14px;color:var(--muted)}
+.foot{background:var(--bg2);color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+.foot .fq{font:600 15px/1.3 Sora,sans-serif;color:var(--ink)}
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(96vw,1400px);max-height:92vh}
+dialog.lb::backdrop{background:rgba(6,22,43,.85)}
+dialog.lb img{max-width:min(96vw,1400px);max-height:86vh;border-radius:12px;object-fit:contain}
+dialog.lb p{color:#fff;text-align:center;margin-top:10px;font-size:14px}
+dialog.lb button{position:absolute;right:8px;top:8px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;font:600 20px Inter;cursor:pointer}
+/* timbertrack */
+.ttband{background:#F3EEE6;background-image:repeating-radial-gradient(ellipse 140% 60% at 110% 120%,transparent 0 22px,rgba(139,90,43,.05) 23px 24px);color:#2A2620}
+.ttband h2{color:#1E3F2E}
+.ttband .lead{color:#5E554B}
+.ttstory{font:500 17px/1.45 Sora,sans-serif;color:#1E3F2E;border-left:3px solid #C4570F;padding-left:14px}
+.ttroute{position:relative;margin:0 0 clamp(24px,4vw,40px)}
+.ttroute svg{width:100%;height:auto;display:block;overflow:visible}
+.ttroute .stop circle{fill:#F3EEE6;stroke:#1E3F2E;stroke-opacity:.35;stroke-width:3;transition:fill .4s,stroke .4s}
+.ttroute .stop text{font:600 16px Inter,sans-serif;fill:#7A6F63}
+.ttroute .stop.on circle{fill:#C4570F;stroke:#C4570F;stroke-opacity:1}
+.ttroute .stop.on text{fill:#1E3F2E}
+.ttnow{margin-top:8px;text-align:center;font:600 15px/1.4 Inter,sans-serif;color:#1E3F2E;min-height:22px}
+.ttgrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:28px;align-items:start}
+.ttfacts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:18px}
+.ttfacts div{border-top:2px solid #C4570F;padding-top:10px}
+.ttfacts b{display:block;font:600 24px/1.1 Sora,sans-serif;color:#1E3F2E}
+.ttfacts span{display:block;margin-top:4px;font-size:13px;color:#7A6F63}
+.solved{background:#fff;border:1px solid #E2D6C3;border-radius:22px;padding:22px}
+.solved h3{color:#1E3F2E;font-size:22px}
+.solved ol{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:12px;counter-reset:n}
+.solved li{display:grid;gap:6px;padding-bottom:12px;border-bottom:1px dashed #E2D6C3;counter-increment:n}
+.solved li:last-child{border-bottom:0;padding-bottom:0}
+.solved .was{font-size:14px;color:#8A7F72;text-decoration:line-through;text-decoration-color:rgba(196,87,15,.6);text-decoration-thickness:2px}
+.solved .was::before{content:"Before  ";font:700 11px Inter,sans-serif;color:#7A4A21;text-decoration:none;display:inline-block;background:#EADFCF;border-radius:999px;padding:3px 8px;margin-right:8px}
+.solved .now{font-weight:600;font-size:16px;color:#1E3F2E;display:flex;gap:8px;align-items:flex-start}
+.solved .now::before{content:"Now";flex:none;font:700 11px/1 Inter,sans-serif;color:#fff;background:#1E3F2E;border-radius:999px;padding:5px 9px;margin-top:2px}
+.ttshots{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:28px 2px 8px;margin-top:8px}
+.ttshots figure{flex:0 0 auto;width:min(200px,46vw);margin:0;scroll-snap-align:start;text-align:center}
+.ttshots .zoom{border-radius:22px;overflow:hidden;border:6px solid #1A1712;background:#1A1712;box-shadow:0 20px 34px -22px rgba(42,38,32,.6);transition:transform .3s}
+.ttshots .zoom:hover{transform:translateY(-4px)}
+.ttshots img{width:100%;aspect-ratio:600/1298;object-fit:cover;object-position:top;border-radius:16px}
+.ttshots figcaption{margin-top:10px;font:600 14px Sora,sans-serif;color:#1E3F2E}
+@media(max-width:899px){.ttgrid{grid-template-columns:minmax(0,1fr)}.ttfacts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ttlegend{display:none}
+@media(max-width:599px){.ttroute .stop text{display:none}.ttlegend{display:flex;justify-content:space-between;gap:8px;margin-top:4px;font:600 12px/1.3 Inter,sans-serif;color:#7A6F63}.ttlegend span:nth-child(2){text-align:center}.ttlegend span:last-child{text-align:right}}
+/* reveal, cursor */
+.js [data-r]{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.8,.2,1) var(--d,0s),transform .7s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
+.js [data-r].in{opacity:1;transform:none}
+.js .split .w{display:inline-block;opacity:0;transform:translateY(.55em) rotate(4deg);transition:opacity .6s ease calc(var(--i)*60ms),transform .7s cubic-bezier(.2,.8,.2,1.1) calc(var(--i)*60ms)}
+.js .split.in .w{opacity:1;transform:none}
+#cdot,#cring,#trail{position:fixed;left:0;top:0;pointer-events:none;z-index:99;opacity:0;transition:opacity .3s}
+#trail{width:100vw;height:100vh;z-index:98}
+#cdot{width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 2px #fff}
+#cring .r{width:38px;height:38px;margin:-19px 0 0 -19px;border-radius:50%;border:1.5px solid var(--blue);transition:transform .3s cubic-bezier(.2,.8,.2,1),background .3s}
+#cring.big .r{transform:scale(1.7);background:rgba(30,111,217,.1)}
+.cur-on #cdot,.cur-on #cring,.cur-on #trail{opacity:1}
+html.cur,html.cur *{cursor:none!important}
+@keyframes float{50%{transform:translateY(-8px)}}
+@keyframes shine{0%,40%{transform:translateX(-160%) skewX(-12deg)}75%,100%{transform:translateX(360%) skewX(-12deg)}}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(255,255,255,.8)}70%,100%{box-shadow:0 0 0 10px rgba(255,255,255,0)}}
+@keyframes live{0%{box-shadow:0 0 0 0 rgba(31,164,99,.6)}70%,100%{box-shadow:0 0 0 8px rgba(31,164,99,0)}}
+@keyframes lit{0%,12%{fill:#5D8ED0}22%,82%{fill:#fff}94%,100%{fill:#5D8ED0}}
+@keyframes flow{to{stroke-dashoffset:26}}
+@keyframes pulse{0%{transform:scale(.4);opacity:.9}100%{transform:scale(2.2);opacity:0}}
+@keyframes drift{from{transform:translateX(-260px)}to{transform:translateX(1060px)}}
+@keyframes marq{to{transform:translateX(-50%)}}
+@keyframes pin{from{opacity:0;transform:translateY(16px)}}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.98)}}
+@keyframes dots{0%,60%,100%{transform:none;opacity:.5}30%{transform:translateY(-4px);opacity:1}}
+@keyframes nudge{0%,100%{box-shadow:inset 0 0 0 0 rgba(11,107,94,0)}50%{box-shadow:inset 0 0 0 2px rgba(11,107,94,.55)}}
+@keyframes shim{0%{background-position:100% 0}55%,100%{background-position:0 0}}
+@keyframes tw{50%{opacity:.25}}
+@media(max-width:1099px){.demo{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.dside{grid-column:1/-1}.dphone{width:100%;max-width:340px;justify-self:center}}
+@media(max-width:999px){.probs{grid-template-columns:repeat(2,minmax(0,1fr))}.tour{grid-template-columns:minmax(0,1fr)}.tabs{display:flex;overflow-x:auto;padding-bottom:4px}.tabs button{flex:none}.safe,.promise,.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.bento .t3,.bento .t2{grid-column:span 3}}
+@media(max-width:899px){.stages{grid-template-columns:minmax(0,1fr)}.opt{grid-template-columns:minmax(0,1fr)}.opt .dphone{justify-self:center}}
+@media(max-width:859px){.herogrid,.cgrid,.head,.mgrid,.panel{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:760px){.nav{order:5;width:100%;overflow-x:auto;margin:0 -8px}.steps{grid-template-columns:minmax(0,1fr);gap:26px}.track{left:11px;right:auto;top:12px;bottom:12px;width:2px;height:auto}.track i{transform:scaleY(0);transform-origin:top}.steps.in .track i{transform:scaleY(1)}.step{padding:0 0 0 46px}.demo{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:599px){.probs,.safe,.promise,.bento{grid-template-columns:minmax(0,1fr)}.bento .t3,.bento .t2{grid-column:auto}.ctas .btn{flex:1 1 100%}.brand{font-size:20px}.prob,.pin{min-height:280px}.rxmeta{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.shots .phone.over{width:110px}.dphone .scr{height:600px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js [data-r],.js .split .w{opacity:1;transform:none}.win{fill:#fff}.track i{transform:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="mark" viewBox="0 0 48 48"><circle cx="24" cy="12" r="5.5" fill="currentColor"/><path d="M24 20C20 28 13 35 6 44M24 20C28 28 35 35 42 44" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><path d="M24 24v6M24 35v7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".7"/></symbol>
+<symbol id="i-web" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="15" rx="2.5"/><path d="M3 9h18"/><path class="hl" d="M7 13h6M7 16h4"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle class="hl" cx="12" cy="10" r="2.4"/></symbol>
+<symbol id="i-social" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle class="hl" cx="12" cy="12" r="3.8"/><path d="M16.8 7.2h.01"/></symbol>
+<symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path class="hl" d="M10.5 9.5v5l4.2-2.5z"/></symbol>
+<symbol id="i-brand" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1.2 0 1.8-.8 1.8-1.7 0-1.2-1-1.5-1-2.6 0-1 .8-1.7 1.9-1.7H17a4 4 0 0 0 4-4C21 6.6 17 3 12 3z"/><circle class="hl" cx="7.5" cy="11" r="1.2"/><circle class="hl" cx="10.5" cy="7.5" r="1.2"/><circle class="hl" cx="15" cy="7.8" r="1.2"/></symbol>
+<symbol id="i-qr" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1"/><rect x="14" y="3.5" width="6.5" height="6.5" rx="1"/><rect x="3.5" y="14" width="6.5" height="6.5" rx="1"/><path class="hl" d="M14 14h2.5v2.5H14zM18 18h2.5v2.5H18zM14 20.5h1.5M20.5 14v1.5"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5.5h16v10.5H9.5L5 20v-4H4z"/><path class="hl" d="M8.5 10.7h.01M12 10.7h.01M15.5 10.7h.01"/></symbol>
+<symbol id="i-crm" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.8"/><path d="M4.5 5.5v13c0 1.6 3.4 2.8 7.5 2.8s7.5-1.2 7.5-2.8v-13"/><path class="hl" d="M4.5 12c0 1.6 3.4 2.8 7.5 2.8s7.5-1.2 7.5-2.8"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 20.5h17"/><rect x="5" y="12" width="3" height="6" rx=".6"/><rect x="10.5" y="8" width="3" height="10" rx=".6"/><rect class="hl" x="16" y="4.5" width="3" height="13.5" rx=".6"/></symbol>
+<symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path class="hl" d="m9 15 2 2 4-4"/></symbol>
+<symbol id="i-tv" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12.5" rx="2"/><path d="M8.5 20.5h7M12 17v3.5"/><path class="hl" d="M7 9h6M7 12h4"/></symbol>
+<symbol id="i-print" viewBox="0 0 24 24"><path d="M7 8V3.5h10V8"/><rect x="3.5" y="8" width="17" height="8.5" rx="2"/><path class="hl" d="M7 14h10v6.5H7z"/></symbol>
+<symbol id="i-ring" viewBox="0 0 24 24"><path d="M5 3.5h3.2l1.6 4.3-2.1 1.5a11 11 0 0 0 7 7l1.5-2.1 4.3 1.6V19a1.5 1.5 0 0 1-1.6 1.5C10.6 20 4 13.4 3.5 5.1A1.5 1.5 0 0 1 5 3.5z"/><path class="hl" d="M14.5 3.5a6 6 0 0 1 6 6M14.5 7a2.5 2.5 0 0 1 2.5 2.5"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/><path class="hl" d="M10.5 13.5s-2.2-1.9-2.2-3.4a2.2 2.2 0 0 1 4.4 0c0 1.5-2.2 3.4-2.2 3.4z"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/><path class="hl" d="M17 3.5v3M15.5 5h3"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="17" rx="2"/><path d="M8.5 3.5v17"/><path class="hl" d="M11.5 8.5h4.5M11.5 12h4.5M11.5 15.5h3"/></symbol>
+<symbol id="i-files" viewBox="0 0 24 24"><path d="M8 3.5h7l4 4V17a1.5 1.5 0 0 1-1.5 1.5H8A1.5 1.5 0 0 1 6.5 17V5A1.5 1.5 0 0 1 8 3.5z"/><path d="M4.5 7v12.5A1.5 1.5 0 0 0 6 21h9"/><path class="hl" d="M9.5 10h6M9.5 13h6"/></symbol>
+<symbol id="i-image" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><circle class="hl" cx="9" cy="10" r="1.8"/><path d="m20.5 16-5-5-8 8.5"/></symbol>
+<symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4.5"/><path d="M11.3 11.7 20 3M16.5 6.5l2.5 2.5M14 9l2 2"/></symbol>
+<symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.5 12.2V4.5a1 1 0 0 1 1-1h7.7l8.3 8.3a1.4 1.4 0 0 1 0 2l-6.7 6.7a1.4 1.4 0 0 1-2 0z"/><circle cx="8.3" cy="8.3" r="1.5"/></symbol>
+<symbol id="i-local" viewBox="0 0 24 24"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><path d="M9.3 10.8 12 8.3l2.7 2.5v2.5H9.3z"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.2 7.5 9.5 4.3-1.3 7.5-4.9 7.5-9.5V6z"/><path d="m8.8 12.2 2.3 2.3 4.2-4.4"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.5"/><path d="M3 19.5c.6-3.2 3-5 6-5s5.4 1.8 6 5"/><path d="M16 5.5a3 3 0 0 1 0 6M17.5 14.6c2 .6 3.2 2.3 3.5 4.9"/></symbol>
+<symbol id="i-eyeoff" viewBox="0 0 24 24"><path d="M3 3l18 18"/><path d="M10.6 6.1A9.8 9.8 0 0 1 12 6c5 0 8.5 4.5 9.5 6-.5.8-1.6 2.2-3.2 3.5M6.5 7.6C4.7 8.9 3.4 10.7 2.5 12c1 1.5 4.5 6 9.5 6 1.5 0 2.9-.4 4.1-1"/></symbol>
+<symbol id="i-wa" viewBox="0 0 24 24"><path d="M4 20l1.2-4.1A8 8 0 1 1 8.3 19z"/><path d="M9 8.6c.2 2.8 2.6 5.3 5.6 5.7l1-1.3-1.8-1-.9.8c-.9-.4-1.8-1.3-2.2-2.2l.8-.9-1-1.8z"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3.5h3.2l1.6 4.3-2.1 1.5a11 11 0 0 0 7 7l1.5-2.1 4.3 1.6V19a1.5 1.5 0 0 1-1.6 1.5C10.6 20 4 13.4 3.5 5.1A1.5 1.5 0 0 1 5 3.5z"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4h-9A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H8"/></symbol>
+<symbol id="i-replay" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4v4.5h4.5"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#1E6FD9" stroke="none"/><path d="M10 8v8l6-4z" fill="#fff" stroke="none"/></symbol>
+<symbol id="i-flip" viewBox="0 0 24 24"><path d="M4 9h13l-3-3M20 15H7l3 3"/></symbol>
+</svg>
+
+<div class="intro" id="intro" role="dialog" aria-modal="true" aria-label="Lumidari pamphlet cover">
+  <div class="stage">
+    <div class="cover" id="cover">
+      <button class="openbtn" id="openBtn" type="button" aria-label="Open the Lumidari pamphlet">
+        <span class="book">
+          <span class="inside"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#mark"/></svg></span>
+          <span class="front" id="front">
+            <svg class="mk" viewBox="0 0 48 48" aria-hidden="true"><use href="#mark"/></svg>
+            <span class="fname">Lumidari</span>
+            <span class="fline">“Lighting the way to your door.”</span>
+            <span class="fcity">Visakhapatnam</span>
+          </span>
+        </span>
+        <span class="tap"><i></i>Tap to open</span>
+      </button>
+    </div>
+    <div class="title" id="titleBox" aria-hidden="true">
+      <div class="word" id="word"></div>
+      <p class="tagline" id="tagline"><span>“Lighting the way</span><span>to your door.”</span></p>
+    </div>
+  </div>
+  <p class="hint" id="hint">Tap anywhere to skip</p>
+</div>
+
+<div id="main">
+<header class="top">
+  <a class="brand" href="#home"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#mark"/></svg>Lumidari</a>
+  <nav class="nav" aria-label="Sections"><a href="#problems">Problems we solve</a><a href="#work">Our work</a><a href="#demo">Try it</a><a href="#timber">TimberTrack</a><a href="#services">Services</a><a href="#how">How we work</a><a href="#contact">Contact</a></nav>
+  <button class="replay" id="replay" type="button" aria-label="Replay the opening animation"><svg class="ico" aria-hidden="true"><use href="#i-replay"/></svg></button>
+  <a class="btn primary sm" href="https://wa.me/916305051175?text=Hi%20Lumidari%2C%20I%20would%20like%20a%20free%20business%20audit." target="_blank" rel="noopener">Free audit</a>
+</header>
+
+<section class="hero" id="home">
+  <div class="wrap herogrid">
+    <div>
+      <a class="pill" href="#work" style="text-decoration:none"><span class="live"></span>Live now: a two-branch clinic takes bookings online and on WhatsApp</a>
+      <h1 id="h1">Your customers are looking. We help them <em>find your door</em>.</h1>
+    </div>
+    <div class="herocopy" id="herocopy">
+      <p class="lead">Lumidari builds websites, WhatsApp booking assistants, AI videos and simple dashboards for local businesses in Visakhapatnam and across India. Everything we build is yours to keep.</p>
+      <div class="ctas">
+        <a class="btn primary" href="https://wa.me/916305051175?text=Hi%20Lumidari%2C%20I%20would%20like%20a%20free%20business%20audit." target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Book a free business audit</a>
+        <a class="btn outline" href="#work">See real work</a>
+      </div>
+    </div>
+  </div>
+  <div class="scene" aria-hidden="true">
+    <svg id="sceneSvg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B9DAFB"/><stop offset="1" stop-color="#EEF6FF"/></linearGradient>
+        <radialGradient id="glow"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".4" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+        <linearGradient id="road" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A9CAF0"/><stop offset="1" stop-color="#7AA7DE"/></linearGradient>
+        <pattern id="awn" width="16" height="10" patternUnits="userSpaceOnUse"><rect width="8" height="10" fill="#fff"/><rect x="8" width="8" height="10" fill="#3F7FD3"/></pattern>
+        <g id="cl"><ellipse cx="0" cy="0" rx="34" ry="12"/><ellipse cx="-14" cy="-8" rx="16" ry="12"/><ellipse cx="10" cy="-11" rx="19" ry="15"/></g>
+      </defs>
+      <rect width="800" height="400" fill="url(#sky)"/>
+      <g fill="#fff" opacity=".9">
+        <use href="#cl" class="cloud" y="70" style="animation-duration:70s;animation-delay:-20s"/>
+        <use href="#cl" class="cloud" y="120" style="animation-duration:95s;animation-delay:-60s"/>
+        <use href="#cl" class="cloud" y="45" style="animation-duration:120s;animation-delay:-90s"/>
+        <use href="#cl" class="cloud" y="150" style="animation-duration:85s;animation-delay:-5s"/>
+      </g>
+      <circle cx="520" cy="216" r="230" fill="url(#glow)"/>
+      <circle cx="520" cy="206" r="22" fill="#fff"/>
+      <g id="city" fill="#A6C9F0"></g>
+      <rect y="220" width="800" height="180" fill="#C9E1FA"/>
+      <path d="M514 220C478 272 380 326 296 402H628C596 330 548 272 526 220Z" fill="url(#road)"/>
+      <path d="M520 222C502 280 474 330 462 402" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="16" stroke-linecap="round"/>
+      <path id="lp" class="flow" d="M520 222C502 280 474 330 462 402" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+      <g><circle r="13" fill="#fff" opacity=".55"/><circle r="5.5" fill="#1E6FD9"/>
+        <animateMotion dur="4.5s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#lp"/></animateMotion>
+        <animateTransform attributeName="transform" type="scale" values="1.5;.35" dur="4.5s" repeatCount="indefinite"/></g>
+      <rect y="372" width="800" height="30" fill="#B3D3F6"/>
+      <g id="shops"></g>
+      <g transform="translate(676 0)">
+        <ellipse class="pulse" cy="288" rx="18" ry="5" fill="none" stroke="#1E6FD9" stroke-width="2"/>
+        <path d="M0 282C-14 266-22 256-22 244a22 22 0 0 1 44 0c0 12-8 22-22 38Z" fill="#1E6FD9"/>
+        <circle cy="244" r="8" fill="#fff"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<div class="marq" aria-hidden="true"><div class="mtrack" id="mtrack"></div></div>
+
+<main>
+<section class="band" id="problems">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="kick"><i></i>Problems we solve</p><h2 class="split">Sound familiar?</h2></div>
+      <div style="display:grid;gap:16px;justify-items:start">
+        <p class="lead" data-r>These are the things local owners tell us most. Switch to see what we build for each one. Tap any card to flip it.</p>
+        <div class="seg" role="group" aria-label="Show problems or solutions" data-r><button type="button" id="segA" aria-pressed="true">The problem</button><button type="button" id="segB" aria-pressed="false">What we build</button></div>
+      </div>
+    </div>
+    <div class="probs" id="probs">
+      <button class="prob" type="button" data-r><span class="pin"><span class="face a"><svg class="ico" aria-hidden="true"><use href="#i-ring"/></svg><span class="tag">Bookings</span><span class="q">“Our phone never stops, and we still miss bookings.”</span><span class="flipme"><svg class="ico" style="width:16px;height:16px;color:currentColor" aria-hidden="true"><use href="#i-flip"/></svg>See the fix</span></span><span class="face b"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg><span class="tag">Online and WhatsApp booking</span><p>Customers pick a day and a time on your website or on WhatsApp, at any hour. Each booking gets a code, and full slots close by themselves.</p><span class="proof"><i></i>Live at a clinic in Anakapalle</span></span></span></button>
+      <button class="prob" type="button" data-r style="--d:.06s"><span class="pin"><span class="face a"><svg class="ico" aria-hidden="true"><use href="#i-search"/></svg><span class="tag">Visibility</span><span class="q">“People nearby can't find us on Google.”</span><span class="flipme"><svg class="ico" style="width:16px;height:16px;color:currentColor" aria-hidden="true"><use href="#i-flip"/></svg>See the fix</span></span><span class="face b"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span class="tag">Google Maps and a fast website</span><p>A complete Google Business Profile, a mobile-first website and links from Maps that open your booking form with the right branch chosen.</p><span class="proof"><i></i>Maps links built for the clinic</span></span></span></button>
+      <button class="prob" type="button" data-r style="--d:.12s"><span class="pin"><span class="face a"><svg class="ico" aria-hidden="true"><use href="#i-moon"/></svg><span class="tag">Replies</span><span class="q">“We answer the same WhatsApp questions till midnight.”</span><span class="flipme"><svg class="ico" style="width:16px;height:16px;color:currentColor" aria-hidden="true"><use href="#i-flip"/></svg>See the fix</span></span><span class="face b"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg><span class="tag">WhatsApp assistant</span><p>Timings, address, map links, bookings, cancellations and feedback, answered on WhatsApp Business while you rest. Medical or tricky questions go to a person.</p><span class="proof"><i></i>Live since 12 Nov 2026</span></span></span></button>
+      <button class="prob" type="button" data-r><span class="pin"><span class="face a"><svg class="ico" aria-hidden="true"><use href="#i-book"/></svg><span class="tag">Records</span><span class="q">“Appointments live in a notebook at the counter.”</span><span class="flipme"><svg class="ico" style="width:16px;height:16px;color:currentColor" aria-hidden="true"><use href="#i-flip"/></svg>See the fix</span></span><span class="face b"><svg class="ico" aria-hidden="true"><use href="#i-crm"/></svg><span class="tag">Your own dashboard</span><p>Today's list by time slot, new or returning customers, notes, no-shows and a waiting-room TV. Every visit is searchable by phone number.</p><span class="proof"><i></i>The clinic dashboard and TimberTrack</span></span></span></button>
+      <button class="prob" type="button" data-r style="--d:.06s"><span class="pin"><span class="face a"><svg class="ico" aria-hidden="true"><use href="#i-files"/></svg><span class="tag">Numbers</span><span class="q">“Our sales figures are spread over five Excel files.”</span><span class="flipme"><svg class="ico" style="width:16px;height:16px;color:currentColor" aria-hidden="true"><use href="#i-flip"/></svg>See the fix</span></span><span class="face b"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg><span class="tag">One dashboard you can trust</span><p>We join the files, check every figure against your accounts and show what was sold, to whom, what is pending and what is late.</p><span class="proof"><i></i>22,615 invoice lines matched for a manufacturer</span></span></span></button>
+      <button class="prob" type="button" data-r style="--d:.12s"><span class="pin"><span class="face a"><svg class="ico" aria-hidden="true"><use href="#i-image"/></svg><span class="tag">Creative</span><span class="q">“Our posters and videos look homemade.”</span><span class="flipme"><svg class="ico" style="width:16px;height:16px;color:currentColor" aria-hidden="true"><use href="#i-flip"/></svg>See the fix</span></span><span class="face b"><svg class="ico" aria-hidden="true"><use href="#i-video"/></svg><span class="tag">Posters, AI films, slideshows</span><p>Print banners with QR codes, animated event slideshows and AI-made films, in Telugu and English, all in one consistent look.</p><span class="proof"><i></i>See the studio work, below</span></span></span></button>
+    </div>
+  </div>
+</section>
+
+<section class="band dark" id="work">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="kick"><i></i>Real work, live today</p><h2 class="split">Sri Ratna's Homoeo Clinic</h2></div>
+      <div style="display:grid;gap:16px;justify-items:start">
+        <p class="lead" data-r>A two-branch homoeopathy clinic in Anakapalle and Yelamanchili. Patients used to book only by phone. We designed and built everything you see here.</p>
+        <a class="btn outline sm" href="https://sriratnashomoeo.in" target="_blank" rel="noopener" data-r>Open sriratnashomoeo.in</a>
+      </div>
+    </div>
+    <div class="facts" data-r>
+      <div class="fact"><b data-count="17">17</b><span>days from first commit to a live WhatsApp assistant</span></div>
+      <div class="fact"><b data-count="2">2</b><span>branches in one booking system</span></div>
+      <div class="fact"><b data-count="6">6</b><span>seats per hour, enforced by the database</span></div>
+      <div class="fact"><b data-count="500">500</b><span>automated checks in the code</span></div>
+    </div>
+    <div data-r>
+      <div class="player">
+        <video id="story" src="media/build-story.mp4" poster="media/build-story-poster.webp" playsinline muted preload="none"></video>
+        <button class="playbtn" id="storyBtn" type="button" aria-label="Play the 55-second build story"><span><svg aria-hidden="true"><use href="#i-play"/></svg>Watch how we built it · 55 s</span></button>
+      </div>
+      <p class="vcap">From brochure to booking, dashboard, banner and WhatsApp, with the real dates from our project history.</p>
+    </div>
+
+    <div class="tour">
+      <div class="tabs" role="tablist" aria-label="Parts of the clinic system">
+        <button role="tab" id="t-web" aria-controls="p-web" aria-selected="true" type="button"><svg class="ico" aria-hidden="true"><use href="#i-web"/></svg>Website</button>
+        <button role="tab" id="t-book" aria-controls="p-book" aria-selected="false" tabindex="-1" type="button"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg>Online booking</button>
+        <button role="tab" id="t-dash" aria-controls="p-dash" aria-selected="false" tabindex="-1" type="button"><svg class="ico" aria-hidden="true"><use href="#i-crm"/></svg>Doctor's dashboard</button>
+        <button role="tab" id="t-tv" aria-controls="p-tv" aria-selected="false" tabindex="-1" type="button"><svg class="ico" aria-hidden="true"><use href="#i-tv"/></svg>Waiting-room TV</button>
+        <button role="tab" id="t-print" aria-controls="p-print" aria-selected="false" tabindex="-1" type="button"><svg class="ico" aria-hidden="true"><use href="#i-print"/></svg>Print banner</button>
+      </div>
+      <div>
+        <div class="panel" role="tabpanel" id="p-web" aria-labelledby="t-web">
+          <div class="shots">
+            <div class="laptop"><div class="scr"><button class="zoom" type="button" data-zoom="media/clinic-home.webp" data-cap="The clinic's home page on a laptop"><img src="media/clinic-home.webp" alt="Sri Ratna's Homoeo Clinic home page with the clinic name, tagline and buttons to book, find the clinics or call" loading="lazy"></button></div></div>
+            <div class="phone over"><div class="scr"><img src="media/clinic-phone.webp" alt="The same home page on a phone, with Call, Book and Directions at the bottom" loading="lazy"></div></div>
+          </div>
+          <div>
+            <h3>A website patients can use at any hour</h3>
+            <ul><li>Both branches with hours and a live "open now" status</li><li>50 health concerns, searchable in English and Telugu</li><li>Call, Book and Directions always one tap away on phones</li><li>Wording kept within homoeopathy advertising rules</li></ul>
+            <div class="thumbs"><button type="button" data-zoom="media/concerns.webp" data-cap="Health concerns, grouped and labelled in Telugu"><img src="media/concerns.webp" alt="Concerns section with Telugu labels" loading="lazy"></button><button type="button" data-zoom="media/branches.webp" data-cap="Both branches with live open-now status"><img src="media/branches.webp" alt="Two branch cards with hours" loading="lazy"></button></div>
+          </div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-book" aria-labelledby="t-book" hidden>
+          <div class="shots" style="gap:18px;grid-template-columns:auto auto;display:grid">
+            <div class="phone" style="width:230px"><div class="scr"><video data-auto src="media/booking.mp4" poster="media/booking-form.webp" muted loop playsinline preload="none" aria-label="Screen recording of a booking on a phone"></video></div></div>
+            <div class="phone" style="width:170px;align-self:end"><div class="scr"><img src="media/booking-done.webp" alt="Booking confirmed with code SR-7K3Q" loading="lazy"></div></div>
+          </div>
+          <div>
+            <h3>Branch, day, hour. A booking code in seconds.</h3>
+            <ul><li>Six seats per hour, checked by the database, not by hope</li><li>Full slots grey out while the patient is choosing</li><li>No double bookings: 12 people trying for the last 6 seats at once, exactly 6 get them</li><li>Google Maps links open the form with the right branch</li></ul>
+          </div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-dash" aria-labelledby="t-dash" hidden>
+          <div class="shots">
+            <div class="laptop"><div class="scr"><video data-auto src="media/dashboard.mp4" poster="media/dashboard.webp" muted loop playsinline preload="none" aria-label="Screen recording of the doctor's dashboard"></video></div></div>
+            <div class="phone over"><div class="scr"><img src="media/dashboard-phone.webp" alt="The dashboard on a phone" loading="lazy"></div></div>
+          </div>
+          <div>
+            <h3>The day's list, before the first patient walks in</h3>
+            <ul><li>Bookings by time slot and branch, with Arrived, Done and No-show</li><li>"New patient" or "2nd visit", with the date of the last visit</li><li>Find any patient's visits by phone number</li><li>Close a branch for a holiday and both the website and WhatsApp stop offering those times</li><li>Google sign-in, invited clinic staff only</li></ul>
+            <div class="thumbs"><button type="button" data-zoom="media/dashboard-find.webp" data-cap="Find patient: every visit for one phone number"><img src="media/dashboard-find.webp" alt="Find patient view" loading="lazy"></button><button type="button" data-zoom="media/dashboard.webp" data-cap="Today's list on a laptop"><img src="media/dashboard.webp" alt="Dashboard today view" loading="lazy"></button></div>
+          </div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-tv" aria-labelledby="t-tv" hidden>
+          <div class="shots"><button class="zoom" type="button" data-zoom="media/tv.webp" data-cap="Waiting-room screen"><img class="tv" src="media/tv.webp" alt="Waiting-room screen showing who is being seen now and who is next, with short names and booking codes" loading="lazy"></button></div>
+          <div>
+            <h3>Who's now, who's next</h3>
+            <ul><li>Runs on any TV with a browser and stays awake</li><li>Short names and booking codes only: no phone numbers, reasons or notes</li><li>Updates by itself as the doctor marks patients</li></ul>
+          </div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-print" aria-labelledby="t-print" hidden>
+          <div class="shots"><button class="zoom" type="button" data-zoom="media/banner.webp" data-cap="Outdoor banner for the clinic, with booking and review QR codes"><img class="banner" src="media/banner.webp" alt="Clinic banner with QR codes to book a visit and to review on Google, with Telugu lines" loading="lazy"></button></div>
+          <div>
+            <h3>A banner that sends people online</h3>
+            <ul><li>One QR to book, one to leave a Google review</li><li>English and Telugu on the same board</li><li>Print-ready files, plus QR codes for each branch and for directions</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="note">Every screen here is the real clinic system, recorded with sample patients. Real patient data never leaves the clinic.</p>
+    <div class="safe">
+      <div data-r><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg>Only signed-in clinic staff can see patients' details</div>
+      <div data-r style="--d:.06s"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg>Website and WhatsApp share one set of booking rules</div>
+      <div data-r style="--d:.12s"><svg class="ico" aria-hidden="true"><use href="#i-eyeoff"/></svg>WhatsApp message text is never stored in logs</div>
+      <div data-r style="--d:.18s"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>The assistant never answers medical questions; it points to the clinic's phone</div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="demo">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="kick"><i></i>Try it yourself</p><h2 class="split">Book a visit on the clinic's WhatsApp</h2></div>
+      <p class="lead" data-r>Tap the highlighted buttons. Every reply on the patient's phone comes from the clinic assistant's real code, run with a sample patient. Watch the doctor's phone when you confirm.</p>
+    </div>
+    <div class="demo">
+      <div class="dside" data-r>
+        <ol class="steps3">
+          <li><div><b>The patient messages "Hi"</b><span>The assistant offers to book, show bookings, or share timings and address.</span></div></li>
+          <li><div><b>Branch, day, time, name, reason</b><span>Only open days and free hours are offered, the same as on the website.</span></div></li>
+          <li><div><b>The doctor hears about it</b><span>A new-booking alert, plus a list of the day's bookings at 8:30 every morning.</span></div></li>
+        </ol>
+        <p><span class="pill"><span class="live"></span>Assistant live on +91 94938 85443</span></p>
+        <p><span class="pill amber">Doctor's alerts and morning list: built, switching on once Meta approves the message templates</span></p>
+        <button class="btn outline sm" id="restart" type="button" style="justify-self:start"><svg class="ico" aria-hidden="true"><use href="#i-replay"/></svg>Restart the demo</button>
+      </div>
+      <div data-r style="--d:.08s">
+        <div class="dphone"><div class="scr">
+          <div class="wah"><span class="av">S</span><div><b>Sri Ratna's Homoeo Clinic</b><small>Booking assistant</small></div></div>
+          <div class="chat" id="pchat" aria-live="polite"></div>
+          <div class="bar"><span class="in" id="pin">Message</span><button type="button" id="psend" hidden>Send</button></div>
+        </div></div>
+        <p class="plab">Patient's phone<small>Sample patient: Ravi Kumar</small></p>
+      </div>
+      <div data-r style="--d:.16s">
+        <div class="dphone"><div class="scr">
+          <div class="wah" style="background:#1B4C85"><span class="av" style="color:#1B4C85">S</span><div><b>Clinic alerts</b><small>To the doctor's own WhatsApp</small></div></div>
+          <div class="chat" id="dchat" aria-live="polite"></div>
+        </div></div>
+        <p class="plab">Doctor's phone<small>Sample patients</small></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band ttband" id="timber">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="kick" style="color:#C4570F"><i></i>Real work · first version, Nov 2026</p><h2 class="split">TimberTrack for Aditya Traders</h2></div>
+      <div style="display:grid;gap:14px;justify-items:start">
+        <p class="lead" data-r>A timber trader in Andhra Pradesh sends mango and teak logs on lorries to buyers more than 1,500 km away in Rajasthan. Every lorry used to live on paper. We built one app for the yard staff, the accountant and the owner.</p>
+        <p class="ttstory" data-r>Designed after two months working in the timber yard alongside the team, so it follows the yard's own steps and words.</p>
+      </div>
+    </div>
+    <div class="ttroute" data-r aria-hidden="true">
+      <svg viewBox="0 0 1200 200" preserveAspectRatio="xMidYMid meet">
+        <path d="M40 150C220 150 300 60 470 70S760 170 900 120 1100 50 1160 60" fill="none" stroke="#1E3F2E" stroke-opacity=".12" stroke-width="22" stroke-linecap="round"/>
+        <path id="ttroad" d="M40 150C220 150 300 60 470 70S760 170 900 120 1100 50 1160 60" fill="none" stroke="#C4570F" stroke-width="3" stroke-dasharray="10 12" stroke-linecap="round"/>
+        <g class="stop" data-at=".03"><circle cx="40" cy="150" r="14"/><text x="40" y="190" text-anchor="middle">Yard, Andhra Pradesh</text></g>
+        <g class="stop" data-at=".45"><circle cx="560" cy="96" r="14"/><text x="560" y="140" text-anchor="middle">On the way</text></g>
+        <g class="stop" data-at=".97"><circle cx="1160" cy="60" r="14"/><text x="1160" y="30" text-anchor="end">Buyer, Rajasthan</text></g>
+        <g id="ttlorry"><rect x="-26" y="-30" width="34" height="22" rx="3" fill="#C4570F"/><rect x="-24" y="-36" width="28" height="7" rx="2" fill="#8B5A2B"/><rect x="8" y="-24" width="18" height="16" rx="3" fill="#1E3F2E"/><circle cx="-16" cy="-6" r="5" fill="#2A2620"/><circle cx="16" cy="-6" r="5" fill="#2A2620"/></g>
+      </svg>
+      <p class="ttlegend"><span>Yard, Andhra Pradesh</span><span>On the way</span><span>Buyer, Rajasthan</span></p>
+      <p class="ttnow" id="ttnow">Loading: CFT, weight, freight and invoice recorded before the lorry leaves</p>
+    </div>
+    <div class="ttgrid">
+      <div data-r>
+        <div class="player" style="aspect-ratio:16/9">
+          <video src="media/timbertrack-story.mp4" poster="media/timbertrack-poster.webp" playsinline muted preload="none"></video>
+          <button class="playbtn" type="button" aria-label="Play the 44-second TimberTrack video"><span><svg aria-hidden="true"><use href="#i-play"/></svg>See what it solved · 44 s</span></button>
+        </div>
+        <div class="ttfacts">
+          <div><b>1,500+ km</b><span>per load, yard to buyer</span></div>
+          <div><b>3 roles</b><span>owner, accountant, 10 yard staff</span></div>
+          <div><b>1 record</b><span>per lorry, loading to payment</span></div>
+          <div><b>0 prices</b><span>on staff phones</span></div>
+        </div>
+      </div>
+      <div class="solved" data-r style="--d:.08s">
+        <h3>What it solved</h3>
+        <ol>
+          <li><span class="was">Lorry details spread over tally books and phone calls</span><span class="now">Every lorry in one list: order taken, on the way, completed</span></li>
+          <li><span class="was">Freight, costs and dues added up by hand</span><span class="now">CFT, weight, freight, costs and amount due on one screen</span></li>
+          <li><span class="was">“Where is the lorry now?” calls all day</span><span class="now">One tap asks the driver for his location on WhatsApp</span></li>
+          <li><span class="was">Nobody could say quickly who still owed money</span><span class="now">Each buyer's balance, worked out from sales and payments</span></li>
+          <li><span class="was">Prices visible to everyone at the yard</span><span class="now">Staff see trips and costs; prices never reach their phones</span></li>
+        </ol>
+      </div>
+    </div>
+    <div class="ttshots" data-r>
+      <figure><button class="zoom" type="button" data-zoom="media/tt-list.webp" data-cap="Lorries: every lorry with its status and amount"><img src="media/tt-list.webp" alt="TimberTrack lorry list with filters for unpaid, on the way and needs check" loading="lazy"></button><figcaption>Lorries</figcaption></figure>
+      <figure><button class="zoom" type="button" data-zoom="media/tt-detail.webp" data-cap="One lorry: wood, CFT, weight, freight, costs and amount due"><img src="media/tt-detail.webp" alt="One lorry's record with Share summary and Ask driver location buttons" loading="lazy"></button><figcaption>One lorry</figcaption></figure>
+      <figure><button class="zoom" type="button" data-zoom="media/tt-parties.webp" data-cap="Parties: what each buyer still owes"><img src="media/tt-parties.webp" alt="Parties list with each buyer's amount to collect" loading="lazy"></button><figcaption>Parties</figcaption></figure>
+      <figure><button class="zoom" type="button" data-zoom="media/tt-ledger.webp" data-cap="Ledger: to collect, on the road, CFT on file, freight booked"><img src="media/tt-ledger.webp" alt="Ledger totals" loading="lazy"></button><figcaption>Ledger</figcaption></figure>
+      <figure><button class="zoom" type="button" data-zoom="media/tt-staff.webp" data-cap="A staff login: prices are hidden and money can't be recorded"><img src="media/tt-staff.webp" alt="Staff view with purchase and sale hidden" loading="lazy"></button><figcaption>Staff view</figcaption></figure>
+    </div>
+    <p class="note" style="color:#7A6F63">Real app, recorded with sample buyers and figures.</p>
+  </div>
+</section>
+
+<section class="band tint" id="optical">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="kick"><i></i>Coming next, for optical shops</p><h2 class="split">The eye test result, straight to WhatsApp</h2></div>
+      <div style="display:grid;gap:14px;justify-items:start">
+        <p><span class="pill concept">Concept demo · in development</span></p>
+        <p class="lead" data-r>The optometrist types the reading once. The customer gets a clean copy on WhatsApp, a message when the glasses are ready, and a reminder for next year's check-up. It runs on the same WhatsApp Business setup as the clinic's assistant.</p>
+      </div>
+    </div>
+    <div class="opt">
+      <form class="tab" id="rxform" data-r autocomplete="off" novalidate>
+        <div class="tabh"><b>ClearView Opticals · Eye test</b><label class="cust">Customer <input id="rxName" value="Priya S." maxlength="30" required></label></div>
+        <table class="rx" aria-label="Spectacle prescription, edit any value">
+          <thead><tr><th>Eye</th><th>SPH</th><th>CYL</th><th>AXIS</th></tr></thead>
+          <tbody>
+            <tr><td class="e">Right</td><td><input id="rS" type="number" inputmode="decimal" step="0.25" min="-20" max="20" value="-1.25" aria-label="Right eye SPH"></td><td><input id="rC" type="number" inputmode="decimal" step="0.25" min="-10" max="10" value="-0.50" aria-label="Right eye CYL"></td><td><input id="rA" type="number" inputmode="numeric" step="1" min="0" max="180" value="180" aria-label="Right eye axis"></td></tr>
+            <tr><td class="e">Left</td><td><input id="lS" type="number" inputmode="decimal" step="0.25" min="-20" max="20" value="-1.00" aria-label="Left eye SPH"></td><td><input id="lC" type="number" inputmode="decimal" step="0.25" min="-10" max="10" value="-0.75" aria-label="Left eye CYL"></td><td><input id="lA" type="number" inputmode="numeric" step="1" min="0" max="180" value="170" aria-label="Left eye axis"></td></tr>
+          </tbody>
+        </table>
+        <div class="rxmeta">
+          <label><small>PD (mm)</small><input id="rxPD" type="number" inputmode="numeric" min="45" max="80" value="62"></label>
+          <label><small>Lens</small><select id="rxLens"><option>Single vision, anti-glare</option><option>Blue-cut, anti-glare</option><option>Progressive</option><option>Bifocal</option></select></label>
+          <label><small>Ready on</small><select id="rxReady"><option>Thu 27 Nov</option><option selected>Fri 28 Nov</option><option>Sat 29 Nov</option></select></label>
+        </div>
+        <label style="display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:14px"><input type="checkbox" id="rxok" checked style="width:20px;height:20px;margin-top:1px"> Customer agreed to receive this on WhatsApp</label>
+        <p class="rxerr" id="rxerr" role="status"></p>
+        <div class="rxbtns"><button class="btn primary" type="button" id="sendrx"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>Send to customer's WhatsApp</span></button><button class="btn outline" type="button" id="resetrx"><svg class="ico" aria-hidden="true"><use href="#i-replay"/></svg>Reset</button></div>
+        <p class="muted" style="font-size:13px;margin-top:10px">Change any reading and send again. Sample shop and customer.</p>
+      </form>
+      <div data-r style="--d:.1s">
+        <div class="dphone"><div class="scr">
+          <div class="wah"><span class="av">C</span><div><b>ClearView Opticals</b><small>Business account</small></div></div>
+          <div class="chat" id="ochat" aria-live="polite"></div>
+        </div></div>
+        <p class="plab">Customer's phone</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="studio">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="kick"><i></i>Studio and data work</p><h2 class="split">Films, slideshows and dashboards we made</h2></div>
+      <p class="lead" data-r>Creative work for events and brands, and data work for a manufacturer. Hover or tap a film to play it.</p>
+    </div>
+    <div class="bento">
+      <article class="tile t3" data-r>
+        <div class="media"><video data-hover src="media/festival.mp4" poster="media/festival-1.webp" muted loop playsinline preload="none" aria-label="Animated Dussehra slideshow"></video><span class="tag2">Delivered · event</span></div>
+        <div class="body"><h3>Dussehra bonus slideshow</h3><p>Animated satin ribbons, every award winner on a 90-inch screen, and lines of praise in English and Telugu. Runs offline from a pen drive. Shown here with sample names.</p></div>
+      </article>
+      <article class="tile t3" data-r style="--d:.08s">
+        <div class="media"><video data-hover src="media/film.mp4" poster="media/film-poster.webp" muted loop playsinline preload="none" aria-label="AI-made intro film"></video><span class="tag2">AI film</span></div>
+        <div class="body"><h3>An AI film from one photo</h3><p>A 9-second intro film of our founder walking out of a screen, made with Google Veo. The same tools make promo reels for shops.</p></div>
+      </article>
+      <article class="tile t2" data-r>
+        <div class="media"><button class="zoom" type="button" data-zoom="media/sales-overview.webp" data-cap="Sales dashboard, executive overview (anonymised data)"><img src="media/sales-overview.webp" alt="Sales dashboard overview" loading="lazy" style="object-position:top"></button><span class="tag2">Live dashboard</span></div>
+        <div class="body"><h3>Sales and order dashboard</h3><p>22,615 invoice lines matched to 20,241 order lines, with 0 left unmatched, for a ribbon manufacturer. Names are anonymised.</p><a class="more" href="https://krishnasai-pentakota.github.io/sales-analytics-dashboard/dashboard/index.html" target="_blank" rel="noopener">Open the live dashboard</a></div>
+      </article>
+      <article class="tile t2" data-r style="--d:.06s">
+        <div class="media"><button class="zoom" type="button" data-zoom="media/weaving-floor-board.webp" data-cap="Floor board in Telugu and English for shift supervisors"><img src="media/weaving-floor-board.webp" alt="Production floor board in Telugu and English" loading="lazy" style="object-position:top"></button><span class="tag2">Factory floor</span></div>
+        <div class="body"><h3>A floor board in Telugu</h3><p>Eight months of hand-kept production sheets rebuilt into one checked record, with a board shift supervisors can read.</p></div>
+      </article>
+      <article class="tile t2" data-r style="--d:.12s">
+        <div class="media"><button class="zoom" type="button" data-zoom="media/festival-2.webp" data-cap="A later slide from the Dussehra slideshow"><img src="media/festival-2.webp" alt="Slide with the company promise in English and Telugu" loading="lazy"></button><span class="tag2">Bilingual</span></div>
+        <div class="body"><h3>English and Telugu, side by side</h3><p>Every piece we make can carry both languages, set properly, so the whole team or every customer can read it.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band tint" id="services">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="kick"><i></i>Services</p><h2 class="split">Nine services in three stages</h2></div>
+      <p class="lead" data-r>Start where your business is today. Most shops begin with being found, then add tools that bring customers and save time.</p>
+    </div>
+    <div class="stages">
+      <div class="stage-col" data-r>
+        <div class="sh"><span class="lamp l1"></span><div><h3>Get found</h3><p>Be visible wherever people search</p></div></div>
+        <div class="svc"><svg class="ico" aria-hidden="true"><use href="#i-web"/></svg><h4>Websites that bring enquiries</h4><p>Fast, mobile-first sites with call, WhatsApp and booking buttons.</p><a href="#work">See the clinic site</a></div>
+        <div class="svc"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><h4>Google Maps and local search</h4><p>A complete Business Profile, photos, posts and a monthly visibility report.</p></div>
+        <div class="svc"><svg class="ico" aria-hidden="true"><use href="#i-social"/></svg><h4>Social media presence</h4><p>Instagram, Facebook and LinkedIn kept active with planned posts.</p></div>
+      </div>
+      <div class="stage-col" data-r style="--d:.1s">
+        <div class="sh"><span class="lamp l2"></span><div><h3>Get customers</h3><p>Give people a reason to walk in</p></div></div>
+        <div class="svc"><svg class="ico" aria-hidden="true"><use href="#i-video"/></svg><h4>AI promo videos</h4><p>Short videos in Telugu, Hindi or English that stop the scroll.</p><a href="#studio">See the AI film</a></div>
+        <div class="svc"><svg class="ico" aria-hidden="true"><use href="#i-brand"/></svg><h4>Posters, logos and branding</h4><p>One look on every banner, menu, card and slideshow.</p><a href="#studio">See the slideshow</a></div>
+        <div class="svc"><svg class="ico" aria-hidden="true"><use href="#i-qr"/></svg><h4>QR solutions</h4><p>One scan to book, review, order, pay or chat.</p><a href="#work">See the clinic banner</a></div>
+      </div>
+      <div class="stage-col" data-r style="--d:.2s">
+        <div class="sh"><span class="lamp l3"></span><div><h3>Grow smarter</h3><p>Spend less time on repeat work</p></div></div>
+        <div class="svc"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg><h4>WhatsApp assistants</h4><p>Bookings, timings and feedback answered at any hour.</p><a href="#demo">Try the live demo</a></div>
+        <div class="svc"><svg class="ico" aria-hidden="true"><use href="#i-crm"/></svg><h4>Bookings, CRM and billing</h4><p>Customers, visits, trips, payments and reminders in one system you own.</p><a href="#timber">See TimberTrack</a></div>
+        <div class="svc"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg><h4>Dashboards and AI guidance</h4><p>Checked numbers at a glance, and where AI really saves time.</p><a href="#studio">See the sales dashboard</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="how">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="kick"><i></i>How we work</p><h2 class="split">Four clear steps, no surprises</h2></div>
+      <p class="lead" data-r>You always know what is included, what it costs and when it will be ready.</p>
+    </div>
+    <ol class="steps" id="steps" data-r>
+      <li class="track" aria-hidden="true"><i></i></li>
+      <li class="step"><span class="dot"></span><h3>Free business audit</h3><p>We check your Google listing, website and social pages and show you what is missing. No charge.</p></li>
+      <li class="step"><span class="dot" style="transition-delay:.5s"></span><h3>Plan and fixed quote</h3><p>A written scope with deliverables, timeline and revisions, agreed before we start.</p></li>
+      <li class="step"><span class="dot" style="transition-delay:1s"></span><h3>Build and launch</h3><p>You see progress at every step and approve everything before it goes live.</p></li>
+      <li class="step"><span class="dot" style="transition-delay:1.5s"></span><h3>Support and growth</h3><p>Optional monthly care for updates, posts, reports and new ideas.</p></li>
+    </ol>
+    <div class="promise">
+      <div data-r><svg class="ico" aria-hidden="true"><use href="#i-key"/></svg><h3>You own everything</h3><p>Website, domain, code and customer data are registered in your name.</p></div>
+      <div data-r style="--d:.06s"><svg class="ico" aria-hidden="true"><use href="#i-tag"/></svg><h3>Honest pricing</h3><p>Fixed quotes. Domain, hosting, WhatsApp and ad costs shown separately.</p></div>
+      <div data-r style="--d:.12s"><svg class="ico" aria-hidden="true"><use href="#i-local"/></svg><h3>Local and reachable</h3><p>Based in Visakhapatnam. We meet you at your shop, in Telugu or English.</p></div>
+      <div data-r style="--d:.18s"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg><h3>No shortcuts</h3><p>No fake reviews and no promises of a number-one ranking.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band dark" id="motto">
+  <div class="wrap mgrid">
+    <div>
+      <blockquote class="mq" style="margin:0" data-r>
+        <span class="qm" aria-hidden="true">“</span>
+        <p><b>Lighting the way to your door.</b></p>
+        <p style="display:flex;align-items:center;gap:10px;margin-top:22px;font:600 17px/1 Sora,sans-serif;color:var(--sky)"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true" style="color:#fff"><use href="#mark"/></svg>Lumidari</p>
+      </blockquote>
+      <p class="lead" style="margin-top:18px" data-r>When people look for what you offer, we make sure the path leads to you.</p>
+    </div>
+    <div class="doorfig" aria-hidden="true">
+      <svg id="doorSvg" viewBox="0 0 420 320">
+        <defs>
+          <radialGradient id="dglow"><stop offset="0" stop-color="#BFDDFB" stop-opacity=".5"/><stop offset="1" stop-color="#BFDDFB" stop-opacity="0"/></radialGradient>
+          <linearGradient id="spill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EAF4FF" stop-opacity=".7"/><stop offset="1" stop-color="#EAF4FF" stop-opacity="0"/></linearGradient>
+          <radialGradient id="ground"><stop offset=".55" stop-color="#123A68"/><stop offset="1" stop-color="#123A68" stop-opacity="0"/></radialGradient>
+          <linearGradient id="inlight" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#CFE6FF"/></linearGradient>
+        </defs>
+        <g fill="#BFDDFB"><circle class="tw" cx="40" cy="40" r="2"/><circle class="tw" cx="120" cy="22" r="1.5" style="animation-delay:-1s"/><circle class="tw" cx="160" cy="88" r="2" style="animation-delay:-2s"/><circle class="tw" cx="72" cy="130" r="1.4" style="animation-delay:-.5s"/><circle class="tw" cx="400" cy="30" r="1.6" style="animation-delay:-1.6s"/></g>
+        <circle cx="290" cy="180" r="140" fill="url(#dglow)"/>
+        <ellipse cx="270" cy="270" rx="250" ry="46" fill="url(#ground)"/>
+        <rect x="196" y="60" width="196" height="190" fill="#143E70"/>
+        <rect x="188" y="50" width="212" height="13" rx="3" fill="#1B4C85"/>
+        <rect x="258" y="120" width="64" height="130" fill="url(#inlight)"/>
+        <path d="M258 120 236 129v118l22 3z" fill="#1E6FD9"/>
+        <path d="M255 250V117h70v133" fill="none" stroke="#5E9BE6" stroke-width="4"/>
+        <rect x="264" y="78" width="52" height="28" rx="6" fill="#0B2545" stroke="#5E9BE6" stroke-width="1.5"/>
+        <svg x="279" y="81" width="22" height="22" viewBox="0 0 48 48" style="color:#fff"><use href="#mark"/></svg>
+        <rect class="win" x="342" y="128" width="34" height="50" rx="3"/>
+        <rect class="win" x="208" y="78" width="26" height="30" rx="3" style="animation-delay:2s"/>
+        <path d="M258 250h64l84 70H168z" fill="url(#spill)"/>
+        <path d="M6 314C90 294 170 272 290 252" fill="none" stroke="#BFDDFB" stroke-opacity=".22" stroke-width="16" stroke-linecap="round"/>
+        <path id="dp" class="flow" d="M6 314C90 294 170 272 290 252" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        <g><circle r="11" fill="#fff" opacity=".3"/><circle r="4.5" fill="#fff"/><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#dp"/></animateMotion></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="band contact" id="contact">
+  <div class="wrap cgrid">
+    <div>
+      <p class="kick"><i></i>Free business audit</p>
+      <h2>Let's see how your business looks online today</h2>
+      <p class="lead" style="margin-top:16px" data-r>Send a WhatsApp message or call. We check your Google listing, website and social pages and suggest practical first steps, free.</p>
+    </div>
+    <div class="card" data-r style="--d:.1s">
+      <div><p class="who-name">Krishna Sai Pentakota</p><p class="role">Founder and AI Solutions Consultant, Lumidari</p></div>
+      <div class="lines">
+        <div><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+916305051175">+91 63050 51175</a><span class="role">Call or WhatsApp</span></div>
+        <div><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:pentakotakrishnasai17@gmail.com">pentakotakrishnasai17@gmail.com</a></div>
+        <div><svg class="ico" aria-hidden="true"><use href="#i-local"/></svg><span style="flex:1 1 200px">Visakhapatnam, Andhra Pradesh. Serving businesses across India.</span></div>
+      </div>
+      <div class="cbtns">
+        <a class="btn primary" href="https://wa.me/916305051175?text=Hi%20Lumidari%2C%20I%20would%20like%20a%20free%20business%20audit." target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+        <a class="btn outline" href="tel:+916305051175"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Call</a>
+        <button class="btn outline" id="copyBtn" type="button"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg>Copy number</button>
+      </div>
+      <p class="status" id="status" role="status"></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="band foot">
+  <div class="wrap">
+    <a class="brand" href="#home" style="margin:0"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#mark"/></svg>Lumidari</a>
+    <p class="fq">“Lighting the way to your door.”</p>
+    <p>© 2026 Lumidari, Visakhapatnam</p>
+  </div>
+</footer>
+</div>
+
+<dialog class="lb" id="lb"><img id="lbImg" alt=""><p id="lbCap"></p><button type="button" id="lbClose" aria-label="Close">×</button></dialog>
+<div id="cring" aria-hidden="true"><div class="r"></div></div>
+<div id="cdot" aria-hidden="true"></div>
+<canvas id="trail" aria-hidden="true"></canvas>
+
+<script>
+{
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const html=document.documentElement;
+const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine=matchMedia('(pointer: fine)').matches;
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const done=a=>a.finished.catch(()=>{});
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=s=>esc(s).replace(/\*([^*\n]+)\*/g,'<b>$1</b>');
+let seed=11;const rnd=()=>(seed=seed*16807%2147483647)/2147483647;
+const intro=$('#intro'),main=$('#main'),front=$('#front'),word=$('#word'),tagline=$('#tagline'),titleBox=$('#titleBox'),openBtn=$('#openBtn'),hint=$('#hint'),cover=$('#cover');
+let state='closed',run=0;
+main.inert=true;
+
+/* street scene */
+{
+  let ct='',x=0;
+  while(x<800){const w=14+rnd()*26,h=8+rnd()*34;if(x<470||x>570){ct+=`<rect x="${x.toFixed(1)}" y="${(220-h).toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}"/>`;if(h>18)ct+=`<rect x="${(x+w/2-1).toFixed(1)}" y="${(224-h).toFixed(1)}" width="2" height="2" fill="#EEF6FF"/>`}x+=w+2}
+  $('#city').innerHTML=ct;
+  const icons={clinic:'<path d="M0 -7v14M-7 0h14"/>',cafe:'<path d="M-7 -4h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z M4 -2h2a2.5 2.5 0 0 1 0 5h-2"/>',optic:'<circle cx="-4.5" cy="1" r="3.6"/><circle cx="4.5" cy="1" r="3.6"/><path d="M-1 .5h2"/>',school:'<path d="M-9 -2 0 -6 9 -2 0 2z M-5 0v4c3 2 7 2 10 0v-4"/>'};
+  const shops=[{x:92,w:100,h:96,k:'clinic',d:0,c:'#7FAAE0'},{x:200,w:84,h:76,k:'cafe',d:1.6,c:'#8DB6E8'},{x:632,w:90,h:86,k:'optic',d:.8,c:'#7FAAE0'},{x:730,w:96,h:100,k:'school',d:2.4,c:'#8DB6E8'}];
+  $('#shops').innerHTML=shops.map(s=>{const y=372-s.h,cx=s.x+s.w/2;return `<g><rect x="${s.x}" y="${y}" width="${s.w}" height="${s.h}" fill="${s.c}"/><rect x="${s.x}" y="${y}" width="${s.w}" height="6" fill="#5E8FD3"/><rect x="${s.x-4}" y="${y+26}" width="${s.w+8}" height="12" fill="url(#awn)"/><circle cx="${cx}" cy="${y+15}" r="9.5" fill="#0B2545"/><g transform="translate(${cx} ${y+15}) scale(.62)" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">${icons[s.k]}</g><rect class="win" x="${s.x+8}" y="${y+44}" width="${s.w*.55-8}" height="${s.h-56}" rx="2" style="animation-delay:${s.d}s"/><rect x="${s.x+s.w*.62}" y="${y+48}" width="${s.w*.3}" height="${s.h-48}" fill="#4F7FC0"/></g>`}).join('');
+  if(rm){try{$('#sceneSvg').pauseAnimations();$('#doorSvg').pauseAnimations()}catch(e){}}
+}
+/* marquee */
+{
+  const list=['Clinics','Dental clinics','Optical shops','Restaurants','Cafés','Bakeries','Schools','Coaching centres','Salons','Gyms','Real estate','Hotels','Retail shops','Manufacturers'];
+  const one=list.map(t=>`<span>${t}</span>`).join('');$('#mtrack').innerHTML=one+one;
+}
+/* split headings */
+$$('.split').forEach(h=>{h.innerHTML=h.textContent.trim().split(/\s+/).map((w,i)=>`<span class="w" style="--i:${i}">${esc(w)}</span>`).join(' ')});
+/* hero headline */
+function heroIn(){
+  if(rm)return;
+  const h=$('#h1');
+  if(!h.dataset.done){h.dataset.done=1;h.setAttribute('aria-label',h.textContent);h.innerHTML='<span aria-hidden="true">'+h.innerHTML.replace(/(<em>)?([^<\s]+)(<\/em>)?/g,(m,a,w,b)=>`${a||''}<span class="w">${w}</span>${b||''}`)+'</span>'}
+  $$('#h1 .w').forEach((w,i)=>w.animate([{opacity:0,transform:'translateY(.6em) rotate(5deg)'},{opacity:1,transform:'none'}],{duration:700,delay:i*70,easing:'cubic-bezier(.2,.8,.2,1.1)',fill:'both'}));
+  $('#herocopy').animate([{opacity:0,transform:'translateY(18px)'},{opacity:1,transform:'none'}],{duration:800,delay:700,easing:'cubic-bezier(.2,.8,.2,1)',fill:'both'});
+  $('.scene').animate([{opacity:0,transform:'translateY(24px)'},{opacity:1,transform:'none'}],{duration:900,delay:300,fill:'both'});
+}
+/* opening */
+async function openPamphlet(){
+  if(state!=='closed')return;state='opening';const my=++run;
+  word.innerHTML=[...'Lumidari'].map(c=>`<span class="ch">${c}</span>`).join('');
+  if(rm){finishOpen();return}
+  $('.tap').animate([{opacity:1},{opacity:0}],{duration:250,fill:'forwards'});
+  front.animate([{transform:'rotateY(0)'},{transform:'rotateY(-160deg)'}],{duration:850,easing:'cubic-bezier(.6,.05,.25,1)',fill:'forwards'});
+  await wait(640);if(my!==run)return;
+  cover.animate([{transform:'scale(1)',opacity:1},{transform:'scale(1.5)',opacity:0}],{duration:520,easing:'ease-in',fill:'forwards'});
+  hint.classList.add('on');await wait(260);if(my!==run)return;
+  cover.style.visibility='hidden';titleBox.style.visibility='visible';
+  await Promise.all($$('#word .ch').map((c,i)=>done(c.animate([{transform:`translateY(-75vh) rotate(${(i%2?1:-1)*(10+i*3)}deg)`,opacity:0,easing:'cubic-bezier(.55,0,1,.6)'},{transform:'none',opacity:1,offset:.55,easing:'ease-out'},{transform:'translateY(-.22em)',offset:.72,easing:'ease-in'},{transform:'none',offset:.86},{transform:'translateY(-.06em)',offset:.93},{transform:'none',opacity:1}],{duration:1200,delay:i*95,fill:'both'}))));
+  if(my!==run)return;
+  await Promise.all([...tagline.children].map((p,i)=>done(p.animate([{opacity:0,transform:'translateY(14px)'},{opacity:1,transform:'none'}],{duration:480,delay:i*170,fill:'both'}))));
+  if(my!==run)return;await wait(800);if(my!==run)return;finishOpen();
+}
+function finishOpen(){
+  run++;state='open';main.inert=false;hint.classList.remove('on');
+  done(intro.animate([{transform:'none'},{transform:'translateY(-100%)'}],{duration:rm?1:720,easing:'cubic-bezier(.7,0,.25,1)',fill:'forwards'})).then(()=>{intro.hidden=true});
+  heroIn();
+}
+function closePamphlet(){
+  run++;state='closed';
+  intro.getAnimations({subtree:true}).filter(a=>!(a.animationName||a.transitionProperty)).forEach(a=>a.cancel());
+  intro.hidden=false;cover.style.visibility='';word.innerHTML='';titleBox.style.visibility='hidden';main.inert=true;
+  if(!rm)intro.animate([{transform:'translateY(-100%)'},{transform:'none'}],{duration:620,easing:'cubic-bezier(.7,0,.25,1)'});
+  openBtn.focus({preventScroll:true});
+}
+openBtn.addEventListener('click',e=>{e.stopPropagation();openPamphlet()});
+intro.addEventListener('click',()=>{if(state==='opening')finishOpen()});
+$('#replay').addEventListener('click',closePamphlet);
+
+/* reveal on scroll, counters */
+const count=el=>{const n=+el.dataset.count;if(rm||!n)return;const t0=performance.now(),D=1400;const f=t=>{const k=Math.min(1,(t-t0)/D);el.textContent=Math.round(n*(1-Math.pow(1-k,3))).toLocaleString('en-IN');if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-count]').forEach(count);io.unobserve(e.target)}}),{rootMargin:'0px 0px -6% 0px'});
+$$('[data-r],.split').forEach(el=>io.observe(el));
+
+/* problems: global switch and per-card flip */
+const probs=$$('.prob');
+const setAll=on=>{probs.forEach(p=>p.classList.toggle('on',on));$('#segA').setAttribute('aria-pressed',String(!on));$('#segB').setAttribute('aria-pressed',String(on))};
+$('#segA').addEventListener('click',()=>setAll(false));
+$('#segB').addEventListener('click',()=>setAll(true));
+probs.forEach(p=>{p.setAttribute('aria-pressed','false');p.addEventListener('click',()=>{const on=!p.classList.contains('on');p.classList.toggle('on',on);p.setAttribute('aria-pressed',String(on))})});
+
+/* videos: autoplay when visible (tour), on hover/tap (studio) */
+const vio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting&&!v.closest('[hidden]')&&!rm){v.play().catch(()=>{})}else v.pause()}),{threshold:.35});
+$$('video[data-auto]').forEach(v=>vio.observe(v));
+$$('video[data-hover]').forEach(v=>{
+  const t=v.closest('.tile');
+  t.addEventListener('mouseenter',()=>v.play().catch(()=>{}));
+  t.addEventListener('mouseleave',()=>v.pause());
+  t.addEventListener('click',e=>{if(e.target.closest('a,button'))return;v.paused?v.play().catch(()=>{}):v.pause()});
+});
+/* video players: tap to play */
+document.querySelectorAll('.player').forEach(p=>{
+  const v=p.querySelector('video'),b=p.querySelector('.playbtn');
+  b.addEventListener('click',()=>{v.controls=true;v.muted=true;v.play().then(()=>{b.hidden=true}).catch(()=>{b.hidden=true})});
+});
+/* TimberTrack route: the lorry drives yard to buyer, stops light up */
+{
+  const road=$('#ttroad'),lorry=$('#ttlorry'),stops=[...document.querySelectorAll('.ttroute .stop')],now=$('#ttnow');
+  const MSG=['Loading: CFT, weight, freight and invoice recorded before the lorry leaves','On the way: one tap asks the driver for his location on WhatsApp','Delivered: payment recorded, and the buyer\'s balance updates by itself'];
+  const L=road.getTotalLength();let raf=0,t0=0,shown=-1;
+  const place=k=>{const p=road.getPointAtLength(L*k),q=road.getPointAtLength(Math.min(L,L*k+1));lorry.setAttribute('transform',`translate(${p.x} ${p.y}) rotate(${Math.atan2(q.y-p.y,q.x-p.x)*180/Math.PI})`);
+    let idx=0;stops.forEach((s,i)=>{const on=k>=+s.dataset.at;s.classList.toggle('on',on);if(on)idx=i});if(idx!==shown){shown=idx;now.textContent=MSG[idx]}};
+  const tick=ts=>{if(!t0)t0=ts;const c=((ts-t0)/1000)%11;place(Math.min(1,c/9));raf=requestAnimationFrame(tick)};
+  if(rm)place(1);else{place(0);new IntersectionObserver(es=>{if(es[0].isIntersecting){if(!raf)raf=requestAnimationFrame(tick)}else{cancelAnimationFrame(raf);raf=0}}).observe($('.ttroute'))}
+}
+/* lightbox */
+{
+  const lb=$('#lb');
+  document.addEventListener('click',e=>{const z=e.target.closest('[data-zoom]');if(!z)return;$('#lbImg').src=z.dataset.zoom;$('#lbImg').alt=z.dataset.cap||'';$('#lbCap').textContent=z.dataset.cap||'';try{lb.showModal()}catch(err){}});
+  $('#lbClose').addEventListener('click',()=>lb.close());
+  lb.addEventListener('click',e=>{if(e.target===lb)lb.close()});
+}
+
+/* WhatsApp demo: the clinic assistant's real replies, sample patient */
+const BOT=[{"patient": "Hi", "bot": [{"type": "buttons", "body": "Namaste Ravi! Welcome to Sri Ratna's Homoeo Clinic.\n\nI can book your visit, show or cancel your bookings, and share our timings and address.\n\nTo send feedback to the doctor, type *feedback*.", "footer": "In an emergency, please go to the nearest hospital.", "buttons": [{"id": "menu|book", "title": "Book a visit"}, {"id": "menu|mine", "title": "My bookings"}, {"id": "menu|info", "title": "Timings & address"}]}]}, {"patient": "Book a visit", "bot": [{"type": "buttons", "body": "Which branch would you like to visit?\n\n*Anakapalle (main clinic)*\nMon–Wed: 10 AM – 2 PM, 5 PM – 9 PM\nFri, Sat: 10 AM – 2 PM, 5 PM – 9 PM\n\n*Yelamanchili (Thursdays)*\nThu: 11 AM – 8:30 PM", "buttons": [{"id": "br|anakapalle", "title": "Anakapalle"}, {"id": "br|yelamanchili", "title": "Yelamanchili"}]}]}, {"patient": "Anakapalle", "bot": [{"type": "list", "body": "*Anakapalle (main clinic)*\nChoose a day for your visit:", "button": "Choose a day", "rows": [{"id": "day|anakapalle|2026-11-25", "title": "Tomorrow, Wed 25 Nov", "description": "38 seats free"}, {"id": "day|anakapalle|2026-11-27", "title": "Fri 27 Nov", "description": "40 seats free"}, {"id": "day|anakapalle|2026-11-28", "title": "Sat 28 Nov", "description": "44 seats free"}, {"id": "day|anakapalle|2026-11-30", "title": "Mon 30 Nov", "description": "46 seats free"}]}]}, {"patient": "Tomorrow, Wed 25 Nov", "bot": [{"type": "list", "body": "*Anakapalle (main clinic)*\nWednesday, 25 November 2026\nChoose a time:", "button": "Choose a time", "rows": [{"id": "slot|anakapalle|2026-11-25|10:00", "title": "10 AM – 11 AM", "description": "4 seats free"}, {"id": "slot|anakapalle|2026-11-25|11:00", "title": "11 AM – 12 PM", "description": "6 seats free"}, {"id": "slot|anakapalle|2026-11-25|12:00", "title": "12 PM – 1 PM", "description": "5 seats free"}, {"id": "slot|anakapalle|2026-11-25|17:00", "title": "5 PM – 6 PM", "description": "6 seats free"}, {"id": "slot|anakapalle|2026-11-25|18:00", "title": "6 PM – 7 PM", "description": "2 seats free"}, {"id": "slot|anakapalle|2026-11-25|19:00", "title": "7 PM – 8 PM", "description": "6 seats free"}]}]}, {"patient": "11 AM – 12 PM", "bot": [{"type": "buttons", "body": "Wed 25 Nov, 11 AM – 12 PM\n\nHow would you like to see the doctor?", "buttons": [{"id": "visit|clinic", "title": "Visit the clinic"}, {"id": "visit|remote", "title": "Phone/video call"}]}]}, {"patient": "Visit the clinic", "bot": [{"type": "buttons", "body": "Who is the visit for? Please type the patient's full name.\n\nIf it's you, tap your name.", "buttons": [{"id": "name|n|Ravi Kumar", "title": "Ravi Kumar"}]}]}, {"patient": "Ravi Kumar", "bot": [{"type": "buttons", "body": "What is the visit for? Tap an option, or type it in a few words (for example: skin allergy, knee pain).", "buttons": [{"id": "concern|general", "title": "General consultation"}, {"id": "concern|followup", "title": "Follow-up visit"}, {"id": "concern|unsure", "title": "Not sure"}]}]}, {"patient": "Skin allergy", "bot": [{"type": "buttons", "body": "Please check your booking:\n\nName: Ravi Kumar\nBranch: Anakapalle (main clinic)\nDate: Wednesday, 25 November 2026\nTime: 11 AM – 12 PM\nVisit: Clinic visit\nFor: Skin allergy\nPhone: +919876543210\n\nBy tapping *Confirm & agree*, you agree that Sri Ratna's Homoeo Clinic stores these details to manage your visit. Privacy: https://sriratnashomoeo.in/privacy", "buttons": [{"id": "confirm|yes", "title": "Confirm & agree"}, {"id": "change|time", "title": "Change time"}, {"id": "abort|x", "title": "Cancel"}]}]}, {"patient": "Confirm & agree", "bot": [{"type": "text", "body": "Your visit is booked.\n\nBooking code: *SR-7K3Q*\nName: Ravi Kumar\nBranch: Anakapalle (main clinic)\nDate: Wednesday, 25 November 2026\nTime: 11 AM – 12 PM\nVisit: Clinic visit\n\nAddress: 1st Floor, Karri Venkunaidu Complex, Anakapalle\nMap: https://maps.app/…\nPlease come 10 minutes early and show this code at the clinic.\n\nTo see or cancel your bookings, type *my bookings*."}]}];
+{
+  const pc=$('#pchat'),dc=$('#dchat'),pin=$('#pin'),psend=$('#psend');
+  let i=0,busy=false,clock=9*60+14;
+  const tm=()=>{const h=Math.floor(clock/60),m=clock%60;clock+=1;return `${h>12?h-12:h}:${String(m).padStart(2,'0')} ${h>=12?'PM':'AM'}`};
+  const scroll=c=>{c.scrollTop=c.scrollHeight};
+  const me=(c,t)=>{c.insertAdjacentHTML('beforeend',`<div class="m me">${esc(t)}<span class="t">${tm()} ✓✓</span></div>`);scroll(c)};
+  const typing=async c=>{c.insertAdjacentHTML('beforeend','<div class="typing"><i></i><i></i><i></i></div>');scroll(c);await wait(rm?50:750);c.querySelector('.typing')?.remove()};
+  const botMsg=(o,next)=>{
+    let h=fmt(o.body);
+    if(o.footer)h+=`<span class="foot">${esc(o.footer)}</span>`;
+    h+=`<span class="t">${tm()}</span>`;
+    const items=o.type==='buttons'?o.buttons.map(b=>({t:b.title})):o.type==='list'?o.rows.map(r=>({t:r.title,d:r.description})):[];
+    if(items.length)h+='<div class="opts">'+items.map(b=>{const go=b.t===next;return `<button type="button" ${go?'class="go" data-go':'disabled'}>${b.d?`<span class="row"><span>${esc(b.t)}</span><small>${esc(b.d)}</small></span>`:esc(b.t)}</button>`}).join('')+'</div>';
+    pc.insertAdjacentHTML('beforeend',`<div class="m bot">${h}</div>`);scroll(pc);
+    return items.some(b=>b.t===next);
+  };
+  const offer=()=>{
+    const next=BOT[i+1]?.patient;
+    psend.hidden=true;pin.textContent='Message';
+    if(!next){return}
+    const last=pc.lastElementChild;
+    if(last&&last.querySelector('[data-go]'))return;
+    pin.textContent=next;psend.hidden=false;psend.classList.add('go');
+  };
+  const step=async label=>{
+    if(busy)return;busy=true;
+    pc.querySelectorAll('.opts button').forEach(b=>{b.disabled=true;b.classList.remove('go');b.removeAttribute('data-go')});
+    psend.hidden=true;pin.textContent='Message';
+    me(pc,label);i++;
+    await typing(pc);
+    const outs=BOT[i].bot;const next=BOT[i+1]?.patient;
+    for(const o of outs)botMsg(o,next);
+    if(BOT[i].patient==='Confirm & agree')await doctorAlert();
+    offer();busy=false;
+  };
+  pc.addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b)step(BOT[i+1].patient)});
+  psend.addEventListener('click',()=>step(BOT[i+1].patient));
+  const dmsg=(h,t)=>{dc.insertAdjacentHTML('beforeend',`<div class="m bot">${h}<span class="t">${t}</span></div>`);scroll(dc)};
+  const doctorAlert=async()=>{await wait(rm?50:900);await typing(dc);dmsg(`<b>New booking</b>\nAnakapalle (main clinic)\nRavi Kumar · Wed 25 Nov, 11 AM\nClinic visit · Skin allergy\nCode SR-7K3Q`,tm());};
+  const start=async()=>{
+    pc.innerHTML='';dc.innerHTML='';i=0;clock=9*60+14;busy=true;
+    dc.insertAdjacentHTML('beforeend','<div class="m bot" style="align-self:center;background:#E1F2FB;font-size:12px;box-shadow:none;animation:none">TODAY</div>');
+    dmsg(`<b>Today's bookings · Anakapalle (main clinic)</b>\n8 booked\n10 AM Lakshmi Devi (Knee joint pains) · 10 AM Suresh Babu (Acidity) · 10 AM Padmavathi (Hair fall) · 11 AM Anitha (Migraine) · 11 AM Venkata Rao (Follow-up visit) · 12 PM Kiran Kumar (Sinusitis, phone/video) · 12 PM Sravani (General consultation) · 5 PM Durga Prasad (Back pain)`,'8:30 AM');
+    me(pc,BOT[0].patient);await typing(pc);
+    for(const o of BOT[0].bot)botMsg(o,BOT[1].patient);
+    offer();busy=false;
+  };
+  $('#restart').addEventListener('click',start);
+  let started=false;
+  new IntersectionObserver((es,o)=>{if(es[0].isIntersecting&&!started){started=true;start();o.disconnect()}},{threshold:.3}).observe($('#demo .demo'));
+}
+
+/* optical concept: edit the reading, send, send again, reset */
+{
+  const oc=$('#ochat'),btn=$('#sendrx'),lbl=$('#sendrx span'),form=$('#rxform'),err=$('#rxerr');
+  let busy=false,run=0;
+  const HINT='<div class="m bot sys">Edit the reading if you like, then tap "Send to customer\'s WhatsApp"</div>';
+  const val=id=>$('#'+id).value.trim();
+  const dio=x=>{const n=parseFloat(x);if(x===''||!isFinite(n)||Math.abs(n)>20)return null;const q=Math.round(n*4)/4;return (q>0?'+':q<0?'−':'')+Math.abs(q).toFixed(2)};
+  const axis=x=>{const n=Number(x);return x!==''&&Number.isInteger(n)&&n>=0&&n<=180?String(n):null};
+  const add=(h,t)=>{oc.insertAdjacentHTML('beforeend',`<div class="m bot">${h}<span class="t">${t}</span></div>`);oc.scrollTop=oc.scrollHeight};
+  const typing=async my=>{oc.insertAdjacentHTML('beforeend','<div class="typing"><i></i><i></i><i></i></div>');oc.scrollTop=oc.scrollHeight;await wait(rm?50:800);oc.querySelector('.typing')?.remove();return my===run};
+  const reset=()=>{run++;busy=false;btn.disabled=false;oc.innerHTML=HINT;lbl.textContent="Send to customer's WhatsApp";err.textContent=''};
+  reset();
+  form.addEventListener('submit',e=>e.preventDefault());
+  form.addEventListener('input',()=>{err.textContent='';if(!busy&&oc.querySelector('.m:not(.sys)'))lbl.textContent='Send updated result'});
+  $('#resetrx').addEventListener('click',()=>{form.reset();reset()});
+  btn.addEventListener('click',async()=>{
+    if(busy)return;
+    const r={s:dio(val('rS')),c:dio(val('rC')),a:axis(val('rA'))},l={s:dio(val('lS')),c:dio(val('lC')),a:axis(val('lA'))};
+    const name=val('rxName'),pd=Number(val('rxPD'));
+    if(!name){err.textContent='Add the customer\'s name.';return}
+    if([r.s,r.c,l.s,l.c].includes(null)){err.textContent='SPH and CYL must be numbers between −20 and +20.';return}
+    if(r.a===null||l.a===null){err.textContent='Axis must be a whole number from 0 to 180.';return}
+    if(!(pd>=45&&pd<=80)){err.textContent='PD should be between 45 and 80 mm.';return}
+    if(!$('#rxok').checked){err.textContent='Ask the customer first: WhatsApp messages need their consent.';return}
+    busy=true;btn.disabled=true;err.textContent='';const my=++run;
+    if(!rm){
+      const a=btn.getBoundingClientRect(),b=oc.getBoundingClientRect();
+      const f=document.createElement('div');f.className='flyer';f.innerHTML='<svg class="ico" style="width:24px;height:24px;color:#1E6FD9" aria-hidden="true"><use href="#i-files"/></svg>';document.body.appendChild(f);
+      await done(f.animate([{left:a.left+a.width/2-30+'px',top:a.top+'px',transform:'scale(1)',opacity:1},{left:(a.left+b.left)/2+'px',top:Math.min(a.top,b.top)-60+'px',transform:'scale(1.15) rotate(-8deg)',opacity:1,offset:.5},{left:b.left+b.width/2-30+'px',top:b.top+b.height-120+'px',transform:'scale(.6)',opacity:0}],{duration:1000,easing:'cubic-bezier(.5,0,.3,1)'}));f.remove();
+    }
+    if(my!==run)return;
+    oc.innerHTML='';
+    const first=esc(name.split(/\s+/)[0]),lens=esc(val('rxLens')),ready=esc(val('rxReady'));
+    if(!await typing(my))return;
+    add(`Hello ${first}, here is your eye test from <b>ClearView Opticals</b>, 24 Nov 2026.<div class="rxcard"><b>Spectacle prescription</b><table><tr><th></th><th>SPH</th><th>CYL</th><th>AXIS</th></tr><tr><td>R</td><td>${r.s}</td><td>${r.c}</td><td>${r.a}</td></tr><tr><td>L</td><td>${l.s}</td><td>${l.c}</td><td>${l.a}</td></tr></table>PD ${pd} mm · ${lens}</div>`,'6:42 PM');
+    if(!await typing(my))return;
+    add(`Your glasses will be ready on <b>${ready}</b>. We will message you when they are ready to collect.`,'6:42 PM');
+    await wait(rm?50:900);if(my!==run)return;
+    add(`<span class="when">On ${ready}, automatically:</span>\n<b>Your glasses are ready, ${first}.</b> Collect them any time before 9 PM at ClearView Opticals.`,ready.split(' ')[0]+' 5:10 PM');
+    await wait(rm?50:900);if(my!==run)return;
+    add('<span class="when">One year later:</span>\nIt has been a year since your last eye test. Reply <b>Book</b> to choose a time.','Nov 2027');
+    busy=false;btn.disabled=false;lbl.textContent='Send again';
+  });
+}
+
+/* copy number */
+$('#copyBtn').addEventListener('click',()=>{const s=$('#status');try{navigator.clipboard.writeText('+916305051175').then(()=>{s.textContent='Number copied: +91 63050 51175'},()=>{s.textContent='The number is +91 63050 51175.'})}catch(e){s.textContent='The number is +91 63050 51175.'}});
+
+/* cursor with a trail of light */
+if(fine&&!rm){
+  html.classList.add('cur');
+  const dot=$('#cdot'),ring=$('#cring'),cv=$('#trail'),cx=cv.getContext('2d'),dpr=Math.min(2,window.devicePixelRatio||1);
+  let mx=-100,my=-100,rx=-100,ry=-100,parts=[],raf=0;
+  const size=()=>{cv.width=innerWidth*dpr;cv.height=innerHeight*dpr};size();addEventListener('resize',size);
+  const tick=()=>{rx+=(mx-rx)*.2;ry+=(my-ry)*.2;ring.style.transform=`translate(${rx}px,${ry}px)`;cx.clearRect(0,0,cv.width,cv.height);
+    for(const p of parts){p.x+=p.vx;p.y+=p.vy;p.l-=.032;if(p.l>0){cx.beginPath();cx.arc(p.x*dpr,p.y*dpr,p.r*dpr*p.l,0,6.283);cx.fillStyle=`rgba(30,111,217,${(p.l*.45).toFixed(3)})`;cx.fill()}}
+    parts=parts.filter(p=>p.l>0);raf=(parts.length||Math.abs(mx-rx)>.4||Math.abs(my-ry)>.4)?requestAnimationFrame(tick):0};
+  addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;mx=e.clientX;my=e.clientY;dot.style.transform=`translate(${mx}px,${my}px)`;if(parts.length<80)parts.push({x:mx,y:my,l:1,r:1.6+Math.random()*2.2,vx:(Math.random()-.5)*.7,vy:(Math.random()-.5)*.7-.25});html.classList.add('cur-on');if(!raf)raf=requestAnimationFrame(tick)});
+  document.addEventListener('pointerleave',()=>html.classList.remove('cur-on'));
+  document.addEventListener('pointerover',e=>ring.classList.toggle('big',!!e.target.closest('a,button,.tile,.prob')));
+}
+}
+</script>
+</body>
+</html>
