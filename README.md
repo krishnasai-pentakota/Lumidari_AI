@@ -4,6 +4,8 @@ Website and digital pamphlet for Lumidari, an AI agency for local businesses in 
 
 Open `index.html` in a browser. Everything it needs is in this folder: the page, and the screenshots, recordings and videos in `media/`.
 
+**To share as one file:** send `Lumidari-AI-agency.html` (7.4 MB) on WhatsApp or email. It has every picture, video and font built in and opens offline on any phone or computer.
+
 ## What's on the page
 
 - Problems we solve: six common pain points, each flipping to what we build
