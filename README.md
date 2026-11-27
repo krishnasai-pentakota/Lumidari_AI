@@ -2,7 +2,9 @@
 
 Website and digital pamphlet for Lumidari, an AI agency for local businesses in Visakhapatnam.
 
-Open `index.html` in a browser. Everything it needs is in this folder: the page, and the screenshots, recordings and videos in `media/`.
+**Live page (GitHub Pages, until the .in domain is set up):** https://krishnasai-pentakota.github.io/Lumidari_AI/
+
+To view locally, open `index.html` in a browser. Everything it needs is in this folder: the page, and the screenshots, recordings and videos in `media/`.
 
 **To share as one file:** send `Lumidari-AI-agency.html` (7.4 MB) on WhatsApp or email. It has every picture, video and font built in and opens offline on any phone or computer.
 
